@@ -1,7 +1,7 @@
 <?php
-	
+include("vues/v_connexion.php");
 	session_start();
-	$pdo = PdoGsb::getPdoGsb();
+	
 	
 	if(!isset($_REQUEST["uc"])){
 		$_REQUEST["uc"] = 'connexion';
