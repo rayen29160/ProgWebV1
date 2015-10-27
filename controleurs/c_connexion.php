@@ -25,6 +25,7 @@ switch ($action) {
 			} else {
 				include('vues/v_connexion.php');				
 			}
+			break;
 		}
 }
 
