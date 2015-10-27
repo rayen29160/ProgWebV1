@@ -1,11 +1,31 @@
 <?php
-	$id = $_POST['id'];
-	$mdp = $_POST['mdp'];
+if (! isset ( $_REQUEST ['action'] )) {
+	$_REQUEST ['action'] = 'demandeConnexion';
+}
+$action = $_REQUEST ['action'];
+
+switch ($action) {
+	case 'demandeConnexion' :
+		{
+			include ('vues/v_connexion.php');
+			break;
+		}
 	
-	if($id=="toto"&&$mdp="toto")
-	{
-		echo '<script language="javascript">alert("Connexion réussie");</script>';
-	} else {
-		echo '<script language="javascript">alert("Identifiant ou mot de passe incorrect");</script>';
-	}
+	case 'valideConnexion' :
+		{
+			include ('include/fonctions.php');
+			$id = $_REQUEST ['id'];
+			$mdp = $_REQUEST ['mdp'];
+			var_dump($id);
+			
+			if(!testConnexion( $id, $mdp ))
+			{
+				include('vues/v_accueil.php');
+				include('vues/v_sommaire.php');
+			} else {
+				include('vues/v_connexion.php');				
+			}
+		}
+}
+
 ?>
