@@ -14,7 +14,16 @@
 		}
 	}
 	
-	
+	/**
+	 * Calcule l'argent dépensé depuis que la personne a commencé à fumer
+	 * 
+	 * @param int $age
+	 * @param int $ageDebut
+	 * @param int $nbCigarettesJours
+	 * @param string $marqueCigarettes
+	 * @return number 
+	 * 		l'argent dépensé
+	 */
 	function argentDepense($age, $ageDebut, $nbCigarettesJours, $marqueCigarettes) {
 		global $prix6090, $prix9000, $prix0015;
 		//Calcul la durée totale
@@ -59,17 +68,32 @@
 		return $argentDepense;
 	}
 	
-	
+	/**
+	 * Calcule l'argent que la personne a économisé depuis qu'elle a arrêté de fumer
+	 * 
+	 * @param string $dateArret	jj/mm/aaaa
+	 * @param int $nbCigarettesJours
+	 * @param string $marqueCigarettes
+	 * @return number
+	 * 		l'argent économisé
+	 */
 	function argentEconomise($dateArret, $nbCigarettesJours, $marqueCigarettes) {	
-		global $prix0015;	
-		//On divise par 8400 sinon le résultat est en seconde
-		$dureeArretJours = (strtotime($datefin) - strtotime($datedebut)) / 8400; 
-		return $dureeArretJours * $nbCigarettesJours *$prix0015;		
+		global $prix0015;		
+		$dureeArretJours = dureeEnJours($dateArret);		
+		return $dureeArretJours * $nbCigarettesJours * $prix0015;		
 	}
 	
-	function dureeEnJours($dateArret) {
-		$dateNow = date("d-m-Y");
-		return (strtotime($datefin) - strtotime($dateNow)) / 8400;
+	/**
+	 * Calcule le nombre de jours qui sépare 2 dates
+	 * 
+	 * @param string $dateArret  jj/mm/aaaa
+	 * @return number
+	 * 		la différence en jours
+	 */
+	function dureeEnJours($dateArret) {		
+		$dateArret = str_replace("/","-",$dateArret);
+		//On divise par 86400 car c'est le nombre de seconde dans un jour(60*60*24)		
+		return round((strtotime("now") - strtotime($dateArret))/86400);
 	}
 	
 	
