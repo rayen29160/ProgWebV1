@@ -1,4 +1,5 @@
-<?php
+<?php	
+	date_default_timezone_set('Europe/Paris');
 
 	$prix6090 = 1.98/20; //prix d'une cigarette Marlboro entre 1960 et 1989 (paquet de 20)
 	$prix9000 = 2.60 / 20; //prix d'une cigarette Marlboro entre 1990 et 1999 (paquet de 20)
@@ -57,6 +58,20 @@
 		
 		return $argentDepense;
 	}
+	
+	
+	function argentEconomise($dateArret, $nbCigarettesJours, $marqueCigarettes) {	
+		global $prix0015;	
+		//On divise par 8400 sinon le résultat est en seconde
+		$dureeArretJours = (strtotime($datefin) - strtotime($datedebut)) / 8400; 
+		return $dureeArretJours * $nbCigarettesJours *$prix0015;		
+	}
+	
+	function dureeEnJours($dateArret) {
+		$dateNow = date("d-m-Y");
+		return (strtotime($datefin) - strtotime($dateNow)) / 8400;
+	}
+	
 	
 	
 ?>

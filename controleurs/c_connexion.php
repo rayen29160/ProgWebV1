@@ -16,7 +16,7 @@ switch ($action) {
 			include ('include/fonctions.php');
 			$id = $_REQUEST ['id'];
 			$mdp = $_REQUEST ['mdp'];			
-			
+			argentEconomise($dateArret, $nbCigarettesJours, $marqueCigarettes);
 			$total = argentDepense(55, 20, 20, "Marlboro");
 			echo("/ total =".$total);
 			//Teste si l'identifiant et le mot de passe sont bons
