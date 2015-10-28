@@ -1,1 +1,52 @@
 @CHARSET "ISO-8859-1";
+
+
+
+body{
+	background-image:url("FOND2.png");
+	
+}
+
+#con{
+	background-color:white;
+	width:516px !important;
+	height:452px;
+	float:left;
+	margin-left:500px;
+	margin-top:400px;
+	
+	
+}
+#con h2{
+	margin-top:50px;
+	text-align:center;
+	
+}
+#con input{
+	margin-left:33%;
+	width:300px;
+	height:50px;
+	
+}
+#go input{
+	width:100px;
+	margin-left:370px;
+	
+	
+}
+#prem{
+	background-color:white;
+	width:516px !important;
+	height:452px;
+	float:left;
+	margin-left:10px;
+	margin-top:400px;
+	
+}
+#span{
+ 	text-align:center;
+ 	color:#CB7778;
+	
+	
+}
+
