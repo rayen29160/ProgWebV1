@@ -53,7 +53,7 @@
 					case 3:
 						style.background = "url('../images/Camel.PNG') no-repeat";
 						break;
-					}*/
+					}
 			}
 
 			
