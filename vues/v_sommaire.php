@@ -8,6 +8,13 @@
 
 		<li><a href="index.php?uc=motivation">Motivation</a></li>
 	</ul>
+	<div id="stat">
+		<h1> div de combien t'as perdu connard</h1>
+		
+	</div>
+	
+	
+	
 </div>
 
 

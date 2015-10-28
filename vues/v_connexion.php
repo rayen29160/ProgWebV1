@@ -8,7 +8,7 @@
 			Mot de passe : <input type="text" name="mdp"/><br>
 			<input type="submit" value="Se connecter"/>		
 		</form>
-		<a href=""></a>
+		<a href="vues/v_inscription.php">inscription</a>
 	</body>
 </html>
 	
