@@ -38,10 +38,9 @@
 			}
 
 			function changeImage() {
-					var select = document.getElementById("test");
-					style = select.style;
-
-					
+					var select= document.getElementById("test");				
+					var style = select.style;	
+									
 					switch(select.selectedIndex) {
 					case 0:
 						break;
@@ -54,7 +53,7 @@
 					case 3:
 						style.background = "url('../images/Camel.PNG') no-repeat";
 						break;
-					}
+					}*/
 			}
 
 			
@@ -71,37 +70,25 @@
 		Combien de cigarettes fumez-vous par jour ?*  <input type="text" id="nbCigarettes" name="nbCigarettes"/><br><br>		
 		
 		Quelle marque de cigarettes achetez-vous ?* 
-		<!--  <select id="test" name="listeMarques" onChange="changeImage()">
+		<select id="test" name="listeMarques" onChange="changeImage()">
 			<option value="0" selected>--- Votre marque de cigarette ---</option>
 			<option value="1"><img src="images/Marloboro.PNG"/>Marlboro</option>
 			<option value="2">Lucky Strike</option>
 			<option value="3">Gitanes</option>
 			<option value="4">Philip Maurice</option>
-			<option value="5"><img src="images/Camel.PNG"/></option>
+			<option value="5">Camel</option>
 			<option value="6">Royale</option>
 			<option value="7">Gauloises</option>
 			<option value="8">Bastos</option>
 			<option value="9">News</option>
 			<option value="10">...</option>
-		</select>-->
-		
-		
-		
-		<font color="red">Les champs * sont des champs obligatoires</font>
-		
-		<!-- <script type="text/javascript" src="scripts/verifChamps.js"></script> -->
-		
-		
-		
-		
-		<select id="test" name="listeMarques" onChange="changeImage();" style="width:250px; height:150px;">
-		  	<option selected>--Choisissez votre marque--</option>
-			<option style="background:url('../images/Marlboro.PNG') no-repeat;"></option>
-			<option style="background:url('../images/LuckyStrike.PNG') no-repeat;"></option>			
-			<option style="background:url('../images/Camel.PNG') no-repeat;"</option>			
 		</select>
 		
 		
+		<br><br>
+		
+		
+		<font color="red">Les champs * sont des champs obligatoires</font>
 		
 		<br><br>
 		
