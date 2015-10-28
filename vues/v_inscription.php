@@ -83,8 +83,12 @@
 			<option value="9">News</option>
 			<option value="10">...</option>
 		</select>
-		
-		
+		<br><br>
+		<span> Objectif à cours terme </span><input type="text" id="court" name="court"/><span> Prix (€)</span><input type="text" id="prixcourt" name="prixcourt"/>
+		<br><br>
+		<span> Objectif à moyen terme </span><input type="text" id="moyen" name="moyen"/><span> Prix (€)</span><input type="text" id="prixmoyen" name="prixmoyen"/>
+		<br><br>
+		<span> Objectif à long terme </span><input type="text" id="long" name="long"/><span> Prix (€) </span><input type="text" id="prixlong" name="prixlong"/>
 		<br><br>
 		
 		
