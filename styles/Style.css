@@ -1,8 +1,8 @@
+
+@import url(https://fonts.googleapis.com/css?family=Lato:300italic,700,400italic,900,300,400);
 @CHARSET "ISO-8859-1";
 
-
-
-body{
+html{
 	background-image:url("FOND2.png");
 	
 }
@@ -14,24 +14,30 @@ body{
 	float:left;
 	margin-left:500px;
 	margin-top:400px;
+	color:#CB7778;
+	font-family:"
 	
 	
 }
 #con h2{
-	margin-top:50px;
+	margin-top:20px;
 	text-align:center;
+	font-family:'Lato';
+	font-size:30pt;
 	
 }
 #con input{
-	margin-left:33%;
+	margin-left:130px;
 	width:300px;
 	height:50px;
 	
 }
 #go input{
-	width:100px;
-	margin-left:370px;
-	
+	width:150px;
+	height:68px;
+	margin-left:280px;
+	background-image:url("taille.png");
+	border:none;
 	
 }
 #prem{
@@ -42,6 +48,7 @@ body{
 	margin-left:10px;
 	margin-top:400px;
 	
+	
 }
 #span{
  	text-align:center;
@@ -49,4 +56,26 @@ body{
 	
 	
 }
+#con img{
+	width:150px;
+	margin-left:280px;
+
+}
+
+#con form{
+	margin-right:150px;
+}
+#prem{
+	color:#CB7778;
+}
+#prem h3{
+	font-size:36pt;
+}
+#prem p{
+	font-size:18pt;
+}
+#context h2{
+	margin-left:90px;
+}
+
 

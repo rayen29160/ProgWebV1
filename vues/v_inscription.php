@@ -1,4 +1,6 @@
+<link rel="stylesheet" type="text/css" href="styles/Style.css" />
 <html>
+
 	<head><h1>Remplissez ce formulaire</h1>
 	<script language="javascript">
 			//Enlève les espaces et renvoie true si le champ est vide
