@@ -77,7 +77,7 @@
 	 * @return number
 	 * 		l'argent économisé
 	 */
-	function argentEconomise($dateArret, $nbCigarettesJours, $marqueCigarettes) {	
+	function argentEconomise($dateArret, $nbCigarettesJours, $marqueCigarettes) {
 		global $prix0015;		
 		$dureeArretJours = dureeEnJours($dateArret);		
 		return $dureeArretJours * $nbCigarettesJours * $prix0015;		
@@ -94,6 +94,21 @@
 		$dateArret = str_replace("/","-",$dateArret);
 		//On divise par 86400 car c'est le nombre de seconde dans un jour(60*60*24)		
 		return round((strtotime("now") - strtotime($dateArret))/86400);
+	}
+	
+	
+	
+	/**
+	 * Renvoie le pourcentage de l'objectif atteint
+	 * 
+	 * @param double $argentEconomise
+	 * @param double $prixObjectif
+	 * @return number
+	 * 		le pourcentage accompli
+	 */
+	function pourcentageObjectif($argentEconomise, $prixObjectif){
+		return round(($prixObjectif/$argentEconomise)*100);
+		
 	}
 	
 	
