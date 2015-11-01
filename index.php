@@ -52,6 +52,7 @@
 			} else {
 				include("controleurs/c_connexion.php");
 			}
+			break;
 		}
 		case 'deconnecter':{
 			if($_SESSION["connecte"]==1){

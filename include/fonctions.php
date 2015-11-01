@@ -75,7 +75,7 @@
 		
 		$argentDepense = ($nbCigPeriodeUne * $prix6090) + ($nbCigPeriodeDeux * $prix9000) + ($nbCigPeriodeTrois * $prix0015);
 		
-		return $argentDepense;
+		return round($argentDepense);
 	}
 	
 	/**
@@ -90,7 +90,7 @@
 	function argentEconomise($dateArret, $nbCigarettesJours, $marqueCigarettes) {
 		global $prix0015;		
 		$dureeArretJours = dureeEnJours($dateArret);		
-		return $dureeArretJours * $nbCigarettesJours * $prix0015;		
+		return round($dureeArretJours * $nbCigarettesJours * $prix0015);		
 	}
 	
 	/**
@@ -117,10 +117,10 @@
 	 * 		le pourcentage accompli
 	 */
 	function pourcentageObjectif($argentEconomise, $prixObjectif){
-		if(round(($prixObjectif/$argentEconomise)*100)>100) {
+		if(round(($argentEconomise*100)/$prixObjectif)>100) {
 			return 100;
 		} else {
-			return round(($prixObjectif/$argentEconomise)*100);
+			return round(($argentEconomise*100)/$prixObjectif);
 		}
 	}
 	

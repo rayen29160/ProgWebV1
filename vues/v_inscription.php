@@ -44,8 +44,10 @@
 
 			if(nbErreur==0) {
 				//Si tous les champs sont remplis alors on soumet le formulaire
-				document.formInformations.submit();
-			}
+				return true;
+			} else {
+				return false;
+			}			
 		}
 
 		function changeImage() {
@@ -70,7 +72,7 @@
 	</head>
 		
 	<body>		
-		<form method="POST" action="index.php?uc=stats" name="formInformations">
+		<form method="POST" action="index.php?uc=stats" name="formInformations" onsubmit="return verificationRemplissage('age', 'ageDebut', 'nbCigarettes', 'marques');">
 		Quel âge avez-vous ?* <?php echo 'Peut être une liste déroulante avec choix date naissance ?'?><input type="text" id="age" name="age"/><br><br>
 		
 		Age auquel vous avez commencé ?*  <input type="text" id="ageDebut" name="ageDebut"/><br><br>
@@ -105,7 +107,7 @@
 		
 		<br><br>
 		
-		<input type="button" onClick="verificationRemplissage('age', 'ageDebut', 'nbCigarettes', 'marques');" value="Valider le formulaire"/>
+		<input type="submit" name="nom" value="Envoyer">
 		
 		</form>
 	</body>

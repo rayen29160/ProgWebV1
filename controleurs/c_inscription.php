@@ -1,4 +1,4 @@
 <?php
-	include('vues/v_incription.php');	
+	include("vues/v_inscription.php");
 ?>
 	

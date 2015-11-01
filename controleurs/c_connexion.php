@@ -13,7 +13,7 @@ switch ($action) {
 	
 	case 'valideConnexion' :
 		{
-			include ('include/fonctions.php');
+			include('include/fonctions.php');
 			$id = $_REQUEST ['id'];
 			$mdp = $_REQUEST ['mdp'];
 			
