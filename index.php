@@ -12,19 +12,54 @@
 			include("controleurs/c_connexion.php");break;
 		}
 		case 'contact':{
-			include("controleurs/c_contact.php");break;
+			if($_SESSION["connecte"]==1){
+				include("controleurs/c_contact.php");
+			} else {
+				include("controleurs/c_connexion.php");
+			}
+			break;
 		}
 		case 'mentionsLegales':{
-			include("controleurs/c_mentionsLegales.php");break;
+			if($_SESSION["connecte"]==1){
+				include("controleurs/c_mentionsLegales.php");
+			} else {
+				include("controleurs/c_connexion.php");
+			}
+			break;
 		}
 		case 'stats':{
-			include("controleurs/c_stats.php");break;
+			if($_SESSION["connecte"]==1){
+				include("controleurs/c_stats.php");
+			} else {
+				include("controleurs/c_connexion.php");
+			}
+			break;
 		}
 		case 'motivation':{
-			include("controleurs/c_motivation.php");break;
+			if($_SESSION["connecte"]==1){
+				include("controleurs/c_motivation.php");
+			} else {
+				include("controleurs/c_connexion.php");
+			}
+			break;
 		}
 		case 'inscription':{
 			include("controleurs/c_connexion.php");break;
+		}
+		case 'formulaire':{
+			if($_SESSION["connecte"]==1){
+				include("controleurs/c_inscription.php");
+			} else {
+				include("controleurs/c_connexion.php");
+			}
+		}
+		case 'deconnecter':{
+			if($_SESSION["connecte"]==1){
+				include("controleurs/c_deconnecter.php");
+			} else {
+				include("controleurs/c_connexion.php");
+			}
+			break;
 		}
 	}
 ?>

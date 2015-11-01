@@ -5,9 +5,19 @@
 	$prix9000 = 2.60 / 20; //prix d'une cigarette Marlboro entre 1990 et 1999 (paquet de 20)
 	$prix0015 = 5.10 / 20; //prix d'une cigarette Marlboro entre 2000 et 2015 (paquet de 20)
 
-	//Renvoie true si l'identifiant et le mot de passe sont bons
-	function testConnexion($id, $mdp){		
+	/**	
+	 * Gère la connexion (crée une session si la connexion est valide)
+	 * 
+	 * @param string $id
+	 * @param string $mdp
+	 * @return boolean
+	 * 		true si l'identifiant et le mot de passe sont bons
+	 * 		false sinon 		
+	 */
+	function connexion($id, $mdp){		
 		if($id=="abc" && $mdp=="abc") {
+			session_start();
+			$_SESSION["connecte"] = 1 ;
 			return true;
 		} else {
 			return false;
@@ -107,8 +117,11 @@
 	 * 		le pourcentage accompli
 	 */
 	function pourcentageObjectif($argentEconomise, $prixObjectif){
-		return round(($prixObjectif/$argentEconomise)*100);
-		
+		if(round(($prixObjectif/$argentEconomise)*100)>100) {
+			return 100;
+		} else {
+			return round(($prixObjectif/$argentEconomise)*100);
+		}
 	}
 	
 	

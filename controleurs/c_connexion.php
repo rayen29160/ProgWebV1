@@ -19,12 +19,13 @@ switch ($action) {
 			
 			//echo(argentEconomise("25/05/2000", 10, "Marlboro"));
 			
-			//$total = argentDepense(22, 14, 15, "Marlboro");
+			//$total = argentDepense(50, 20, 40, "Marlboro");
 			//echo("/ total =".$total);
 			//Teste si l'identifiant et le mot de passe sont bons
-			if(testConnexion($id,$mdp))
+			if(connexion($id,$mdp))
 			{
-				//Si oui, affiche la page d'accueil et le sommaire
+				//Si oui, affiche la page d'accueil et le sommaire				
+				$_SESSION["id"] = $_POST["id"];
 				include('vues/v_accueil.php');
 				include('vues/v_sommaire.php');
 			} else {
