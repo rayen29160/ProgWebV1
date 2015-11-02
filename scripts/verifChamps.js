@@ -1,35 +1,94 @@
+
+/**
+ * Permet de vérifier si un champ est vide
+ * 
+ * @param champId
+ * @returns {Boolean}
+ * 		true si le champ est vide
+ * 		false sinon
+ */
 function estVide(champId) {
 	var value = document.getElementById(champId).value;
 	value = value.trim();
 
 	if (value === "") {
-		alert("vide");
+		return true;
 	} else {
-		alert("pas vide");
+		return false;
 	}
 }
 
-function verificationRemplissage(id1, id2, id3, id4) {
-	// var value1 = document.getElementById(id1).value;
-	// var value2 = document.getElementById(id2).value;
-	// var value3 = document.getElementById(id3).value;
-	// var value4 = document.getElementById(id4).value;
 
-	// alert(estVide(value1));
-	alert("blabla");
-	// if(estVide(value1)) {
-	// document.getElementById(id1).style.backgroundColor='red';
-	// }
+/**
+ * Permet de vérifier si les mots de passe sont identiques
+ * et qu'ils fassent plus de 7 caractères
+ * 
+ * @param idMdp1
+ * @param idMdp2
+ */
+function verifMdp(idMdp1, idMdp2, idDivErreur){
+	if(window.confirm('Etes-vous sur de vouloir changer de mot de passe ?')){				
+		var mdp1 = document.getElementById(idMdp1).value;
+		var mdp2 = document.getElementById(idMdp2).value;
 
-	// if(estVide(value2)) {
-	// document.getElementById(id2).style.backgroundColor='red';
-	// }
-
-	// if(estVide(value3)) {
-	// document.getElementById(id2).style.backgroundColor='red';
-	// }
-
-	// if(estVide(value2)) {
-	// document.getElementById(id4).style.backgroundColor='red;
-	// }
+		if(mdp1.length < 7 && mdp2.length < 7)
+		{
+			document.getElementById(idDivErreur).innerHTML = '<font color="red">Les mots de passe doivent contenir minimum 7 caracteres</font>';
+		}
+					
+		if(mdp1!=mdp2) {
+			document.getElementById(idDivErreur).innerHTML = '<font color="red">Les mots de passe ne sont pas identiques</font>';
+			mdp2 = "";
+		}
+	}
 }
+
+/**
+ * Verifie que les champs des 3 premières id ne sont pas vides et que un élément de la liste déroulante est sélectionnée
+ * Ecrit le message d'erreur s'il y en a un dans la div dont on a précisé l'id en paramètre
+ * 
+ * @param id1
+ * 		id du premier champ à vérifier
+ * @param id2
+ * 		id du second champ à vérifier
+ * @param id3
+ * 		id du troisième champ à vérifier
+ * @param id4
+ * 		id de la liste déroulante à vérifier
+ * @param idDivErreur
+ * 		id de la div où écrire le message d'erreur
+ * @returns {Boolean}
+ * 		true si on peut valider le formulaire (les champs sont remplis
+ */
+function verificationRemplissage(id1, id2, id3, id4, idDivErreur) {
+
+	var select = document.getElementById(id4);
+	var nbErreur = 0;
+		
+	if(estVide(id1)) {
+		document.getElementById(id1).style.backgroundColor='red';
+		nbErreur = nbErreur + 1;				
+	}
+
+	if(estVide(id2)) {
+		document.getElementById(id2).style.backgroundColor='red';
+		nbErreur = nbErreur + 1;
+	}
+
+	if(estVide(id3)) {
+		document.getElementById(id3).style.backgroundColor='red';
+		nbErreur = nbErreur + 1;
+	}
+		
+	if(select.selectedIndex==0) {
+		document.getElementById(idDivErreur).innerHTML="Vous devez sélectionner votre marque de cigarettes !";
+		nbErreur = nbErreur + 1;
+	}
+
+	if(nbErreur==0) {
+		//Si tous les champs sont remplis alors on soumet le formulaire
+		return true;
+	} else {
+		return false;
+	}			
+}				
