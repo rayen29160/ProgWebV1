@@ -4,6 +4,17 @@ if (! isset ( $_REQUEST ['action'] )) {
 }
 $action = $_REQUEST ['action'];
 
+include('include/fonctions.php');
+
+$_SESSION["age"]= 40;
+$_SESSION["ageDebut"]= 20;
+$_SESSION["nbCigarettes"]= 15;
+$_SESSION["marque"]= "Marlboro";
+$_SESSION["argentDepense"]= argentDepense($_SESSION["age"], $_SESSION["ageDebut"], $_SESSION["nbCigarettes"], $_SESSION["marque"]);
+$_SESSION["dateArret"]= 38;
+$_SESSION["argentEconomise"]= argentEconomise($_SESSION["dateArret"], $_SESSION["nbCigarettes"], $_SESSION["marque"]);
+
+
 switch ($action) {
 	case 'demandeConnexion' :
 		{
@@ -12,25 +23,21 @@ switch ($action) {
 		}
 	
 	case 'valideConnexion' :
-		{
-			include('include/fonctions.php');
+		{			
 			$id = $_REQUEST ['id'];
-			$mdp = $_REQUEST ['mdp'];
+			$mdp = $_REQUEST ['mdp'];			
 			
-			//echo(argentEconomise("25/05/2000", 10, "Marlboro"));
-			
-			//$total = argentDepense(50, 20, 40, "Marlboro");
-			//echo("/ total =".$total);
 			//Teste si l'identifiant et le mot de passe sont bons
 			if(connexion($id,$mdp))
 			{
 				//Si oui, affiche la page d'accueil et le sommaire				
-				$_SESSION["id"] = $_POST["id"];
+				$_SESSION["id"] = $id;
 				include('vues/v_accueil.php');
 				include('vues/v_sommaire.php');
 			} else {
 				//Sinon on reste sur la page de connexion
-				include('vues/v_connexion.php');				
+				include('vues/v_connexion.php');
+				echo("<script language='javascript'>alert('Identifiant ou mot de passe incorrect');</script>");
 			}
 			break;
 		}

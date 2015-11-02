@@ -12,12 +12,12 @@
 		<form method="POST" action="index.php?uc=connexion&action=valideConnexion">
 			<span id="context"><h2>CONNEXION</h2></span>
 			<input type="text" name="id" placeholder="Identifiant" /><br>
-		     <input type="text" name="mdp" placeholder="Mot de passe"/><br>
+		     <input type="password" name="mdp" placeholder="Mot de passe"/><br>
 			<span id='go'><input type="submit" value=""/></span>		
 		</form>
 		<span><h2>INSCRIPTION</h2></span>
 		
-		<a href="vues/v_inscription.php"><img src="styles/GO.png"></a>
+		<a href="index.php?uc=formulaire"><img src="styles/GO.png"></a>
 		</div>
 		<div id="prem">
 			<span id="span"><h3>Première visite ?</h3>

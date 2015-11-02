@@ -43,8 +43,8 @@
 			}
 			break;
 		}
-		case 'inscription':{
-			include("controleurs/c_connexion.php");break;
+		case 'compte':{
+			include("controleurs/c_moncompte.php");break;
 		}
 		case 'formulaire':{
 			if($_SESSION["connecte"]==1){

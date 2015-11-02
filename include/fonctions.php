@@ -16,8 +16,12 @@
 	 */
 	function connexion($id, $mdp){		
 		if($id=="abc" && $mdp=="abc") {
-			session_start();
-			$_SESSION["connecte"] = 1 ;
+			if(!isset($_SESSION))
+			{
+				session_start();
+				$_SESSION["connecte"] = 1 ;
+			}			
+			
 			return true;
 		} else {
 			return false;
@@ -75,7 +79,7 @@
 		
 		$argentDepense = ($nbCigPeriodeUne * $prix6090) + ($nbCigPeriodeDeux * $prix9000) + ($nbCigPeriodeTrois * $prix0015);
 		
-		return round($argentDepense);
+		return number_format(round($argentDepense), 0, ',', ' ');
 	}
 	
 	/**
@@ -90,7 +94,7 @@
 	function argentEconomise($dateArret, $nbCigarettesJours, $marqueCigarettes) {
 		global $prix0015;		
 		$dureeArretJours = dureeEnJours($dateArret);		
-		return round($dureeArretJours * $nbCigarettesJours * $prix0015);		
+		return number_format(round($dureeArretJours * $nbCigarettesJours * $prix0015));		
 	}
 	
 	/**
@@ -122,6 +126,53 @@
 		} else {
 			return round(($argentEconomise*100)/$prixObjectif);
 		}
+	}
+	
+	
+	/**
+	 * Calcule le nombre total de cigarettes fumées depuis que la personne a commencé
+	 * 
+	 * @param int $age
+	 * @param int $ageDebut
+	 * @param int $nbCigarettesJours
+	 * @return number
+	 * 		le nombre de cigarette fumées
+	 */
+	function nbCigarettesTotal($age, $ageDebut, $nbCigarettesJours) {
+		$duree = $age - $ageDebut;
+		return $duree * $nbCigarettesJours;
+	}	
+	
+	
+	/**
+	 * Calcule l'espérance de vie perdue depuis que la personne fume
+	 * (1 cigarette = 8 min perdues)
+	 * 
+	 * @param int $age
+	 * @param int $ageDebut
+	 * @param int $nbCigarettesJours
+	 * @return int
+	 * 		l'espérance de vie perdue
+	 */
+	function esperanceViePerdue($age, $ageDebut, $nbCigarettesJours) {
+		$nbCigTotal = nbCigarettesTotal($age, $ageDebut, $nbCigarettesJours);
+		$minPerdues = $nbCigTotal * 8;
+		$joursPerdus = floor(floor($minPerdues/60)/24);
+		return $joursPerdus;
+	}
+	
+	
+	/**
+	 * Calcule l'espérance de vie sauvée depuis que la personne a arrêté de fumer
+	 * (1 cigarette non fumée = 8 min sauvées)
+	 * 
+	 * @param date $dateArret
+	 * @param int $nbCigarettesJour
+	 * @return number
+	 */
+	function esperanceVieGagnee($dateArret, $nbCigarettesJour) {
+		$nbJours = dureeEnJours($dateArret);
+		return $nbJours*$nbCigarettesJour*8;
 	}
 	
 	

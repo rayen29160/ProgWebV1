@@ -15,8 +15,6 @@ $_SESSION["prixObjMoyen"] = $_POST["prixmoyen"];
 $_SESSION["objLong"] = $_POST["long"];
 $_SESSION["prixObjLong"] = $_POST["prixlong"];
 
-echo($_SESSION["objMoyen"]);
-
 include("include/fonctions.php");
 
 $argentDepense = argentDepense($_SESSION["age"], $_SESSION["ageDebut"], $_SESSION["nbCigarettes"], $_SESSION["marque"]);
