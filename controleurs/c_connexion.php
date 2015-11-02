@@ -14,6 +14,12 @@ $_SESSION["argentDepense"]= argentDepense($_SESSION["age"], $_SESSION["ageDebut"
 $_SESSION["dateArret"]= 38;
 $_SESSION["argentEconomise"]= argentEconomise($_SESSION["dateArret"], $_SESSION["nbCigarettes"], $_SESSION["marque"]);
 
+$_SESSION["objCourt"] = "Jeu vidéo";
+$_SESSION["prixObjCourt"] = 50;
+$_SESSION["objMoyen"] = "Ordinateur";
+$_SESSION["prixObjMoyen"] = 1200;
+$_SESSION["objLong"] = "GSXR";
+$_SESSION["prixObjLong"] = 10000;
 
 switch ($action) {
 	case 'demandeConnexion' :

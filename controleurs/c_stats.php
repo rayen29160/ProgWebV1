@@ -1,19 +1,6 @@
 <?php
 
 //Initialisation des variables de session
-$_SESSION["age"] = $_POST["age"];
-$_SESSION["ageDebut"] = $_POST["ageDebut"];
-$_SESSION["nbCigarettes"] = $_POST["nbCigarettes"];
-$_SESSION["marque"] = $_POST["marques"];
-
-$_SESSION["objCourt"] = $_POST["court"];
-$_SESSION["prixObjCourt"] = $_POST["prixcourt"];
-
-$_SESSION["objMoyen"] = $_POST["moyen"];
-$_SESSION["prixObjMoyen"] = $_POST["prixmoyen"];
-
-$_SESSION["objLong"] = $_POST["long"];
-$_SESSION["prixObjLong"] = $_POST["prixlong"];
 
 include("include/fonctions.php");
 

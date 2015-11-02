@@ -120,7 +120,11 @@
 	 * @return number
 	 * 		le pourcentage accompli
 	 */
-	function pourcentageObjectif($argentEconomise, $prixObjectif){
+	function pourcentageObjectif($argentEconomise, $prixObjectif){		
+		if($prixObjectif==0){
+			return 0;
+		}
+		
 		if(round(($argentEconomise*100)/$prixObjectif)>100) {
 			return 100;
 		} else {
