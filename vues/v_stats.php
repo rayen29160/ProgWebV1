@@ -4,7 +4,9 @@
 	<head><h1>Voici vos statistiques</h1></head>
 	<body>
 		<div id="statistiques">
-			 <?php echo("Depuis que vous avez arrêté de fumer vous avez économisé ".$argentEconomise." €");?><br><br>
+			 <?php echo("Quand vous fumiez vous avez dépensé ".$argentDepense." € et votre espérance de vie à été réduite de ".$viePerdue." jours");?><br><br>		
+		
+			 <?php echo("Vous avez économisé ".$argentEconomise." € et sauvé ".$vieSauvee." jours de votre vie depuis que vous avez arrêté de fumer.");?><br><br>
 			 
 			 <p><?php echo($_SESSION["objCourt"]." : ");?><progress id="avancement" value="<?php echo($pourcentageCourt);?>" max="100"></progress></p>
 			  

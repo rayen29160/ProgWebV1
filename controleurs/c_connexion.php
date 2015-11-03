@@ -36,7 +36,7 @@ switch ($action) {
 			//Teste si l'identifiant et le mot de passe sont bons
 			if(connexion($id,$mdp))
 			{
-				//Si oui, affiche la page d'accueil et le sommaire				
+				//Si oui, affiche la page d'accueil et le sommaire					
 				$_SESSION["id"] = $id;
 				include('vues/v_accueil.php');
 				include('vues/v_sommaire.php');

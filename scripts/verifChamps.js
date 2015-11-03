@@ -91,4 +91,30 @@ function verificationRemplissage(id1, id2, id3, id4, idDivErreur) {
 	} else {
 		return false;
 	}			
+}
+
+/**
+ * Vérifie le remplissage d'un champs, si il est vide écrit un message d'erreur dans une div
+ * @param idChamp
+ * @param idDivErreur
+ * @returns {Boolean}
+ * 		true si le champ est rempli
+ * 		false sinon
+ */
+function verifRps(idChamp, idDivErreur) {
+	var nbErreur = 0;
+		
+	if(estVide(idChamp)) {
+		document.getElementById(idDivErreur).innerHTML = "<font color='red'> Vous devez remplir ce champ !</font>";
+		nbErreur = nbErreur + 1;				
+	} else {
+		document.getElementById(idDivErreur).innerHTML = "";
+	}
+
+	if(nbErreur==0) {
+		//Si le champs est rempli alors on soumet le formulaire
+		return true;
+	} else {
+		return false;
+	}			
 }				

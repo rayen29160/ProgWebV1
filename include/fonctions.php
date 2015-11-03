@@ -16,12 +16,8 @@
 	 */
 	function connexion($id, $mdp){		
 		if($id=="abc" && $mdp=="abc") {
-			if(!isset($_SESSION))
-			{
-				session_start();
-				$_SESSION["connecte"] = 1 ;
-			}			
-			
+			session_start();						
+			$_SESSION["connecte"] = 1 ;
 			return true;
 		} else {
 			return false;
@@ -144,7 +140,7 @@
 	 */
 	function nbCigarettesTotal($age, $ageDebut, $nbCigarettesJours) {
 		$duree = $age - $ageDebut;
-		return $duree * $nbCigarettesJours;
+		return $duree * 365 * $nbCigarettesJours;
 	}	
 	
 	
@@ -159,9 +155,9 @@
 	 * 		l'espérance de vie perdue
 	 */
 	function esperanceViePerdue($age, $ageDebut, $nbCigarettesJours) {
-		$nbCigTotal = nbCigarettesTotal($age, $ageDebut, $nbCigarettesJours);
+		$nbCigTotal = nbCigarettesTotal($age, $ageDebut, $nbCigarettesJours);		
 		$minPerdues = $nbCigTotal * 8;
-		$joursPerdus = floor(floor($minPerdues/60)/24);
+		$joursPerdus = floor(($minPerdues/60)/24);
 		return $joursPerdus;
 	}
 	
@@ -175,8 +171,11 @@
 	 * @return number
 	 */
 	function esperanceVieGagnee($dateArret, $nbCigarettesJour) {
-		$nbJours = dureeEnJours($dateArret);
-		return $nbJours*$nbCigarettesJour*8;
+		$nbJours = dureeEnJours($dateArret);		
+		$nbCigArret = $nbJours*$nbCigarettesJour;		
+		$minSauvees = $nbCigArret*8;		
+		$joursSauves = floor(($minSauvees/60)/24);		
+		return $joursSauves;
 	}
 	
 	
