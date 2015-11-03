@@ -4,8 +4,6 @@
 
 include("include/fonctions.php");
 
-//$argentDepense = argentDepense($_SESSION["age"], $_SESSION["ageDebut"], $_SESSION["nbCigarettes"], $_SESSION["marque"]);
-
 $argentDepense = $_SESSION["argentDepense"];
 $argentEconomise = argentEconomise("25/05/2015",  $_SESSION["nbCigarettes"], $_SESSION["marque"]);
 $pourcentageCourt = pourcentageObjectif($argentEconomise, $_SESSION["prixObjCourt"]);
