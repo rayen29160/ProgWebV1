@@ -178,6 +178,17 @@
 		return $joursSauves;
 	}
 	
+	/**
+	 * Renvoie le nombre de fois que le rêve a été dépassé
+	 * 
+	 * @param int $argentDepense
+	 * @param int $prixReves
+	 */
+	function nbRevesDepasse($argentDepense, $prixReves){
+		$nb = $argentDepense / $prixReves;
+		return $nb;
+	}
+	
 	
 	
 ?>

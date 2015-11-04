@@ -2,11 +2,17 @@
 <html>
 
 	<head><h1>Remplissez ce formulaire</h1>
-	<script src="scripts/verifChamps.js"></script>
+		<script src="scripts/verifChamps.js"></script>
+		<script language="javascript">
+			function afficher(etat) 
+			{ 				
+				document.getElementById("objectifs").style.visibility=etat; 
+			} 
+		</script>
 	</head>
 		
 	<body>		
-		<form method="POST" action="index.php?uc=stats" name="formInformations" onsubmit="return verificationRemplissage('age', 'ageDebut', 'nbCigarettes', 'marques, 'erreur');">
+		<form method="POST" action="index.php?uc=motivation" name="formInformations" onsubmit="return verificationRemplissage('age', 'ageDebut', 'nbCigarettes', 'marques, 'erreur');">
 		Quel âge avez-vous ?* <?php echo 'Peut être une liste déroulante avec choix date naissance ?'?><input type="text" id="age" name="age"/><br><br>
 		
 		Age auquel vous avez commencé ?*  <input type="text" id="ageDebut" name="ageDebut"/><br><br>
@@ -28,14 +34,17 @@
 			<option value="10">...</option>
 		</select>
 		<div id="erreur"></div>
+		<br>
+		<span>Voulez-vous définir vos objectifs maintenant ?</span><INPUT type="radio" name="choix" value="oui" onclick="afficher('visible');" checked/>Oui<INPUT type="radio" name="choix" value="non" onclick="afficher('hidden');"/>Non
 		<br><br>
-		<span> Objectif à cours terme (exemple : un jeu vidéo)</span><input type="text" id="objCourt" name="court"/><span> Prix (€)</span><input type="text" id="prixCourt" name="prixcourt"/>
-		<br><br>
-		<span> Objectif à moyen terme (exemple : un écran plat)</span><input type="text" id="objMoyen" name="moyen"/><span> Prix (€)</span><input type="text" id="prixMoyen" name="prixmoyen"/>
-		<br><br>
-		<span> Objectif à long terme (exemple : une moto)</span><input type="text" id="objLong" name="long"/><span> Prix (€) </span><input type="text" id="prixLong" name="prixlong"/>
-		<br><br>
-		
+		<div id="objectifs">
+			<span> Objectif à cours terme (exemple : un jeu vidéo)</span><input type="text" id="objCourt" name="court"/><span> Prix (€)</span><input type="text" id="prixCourt" name="prixcourt"/>
+			<br><br>
+			<span> Objectif à moyen terme (exemple : un écran plat)</span><input type="text" id="objMoyen" name="moyen"/><span> Prix (€)</span><input type="text" id="prixMoyen" name="prixmoyen"/>
+			<br><br>
+			<span> Objectif à long terme (exemple : une moto)</span><input type="text" id="objLong" name="long"/><span> Prix (€) </span><input type="text" id="prixLong" name="prixlong"/>
+			<br><br>
+		</div>
 		
 		<font color="red">Les champs * sont des champs obligatoires</font>
 		

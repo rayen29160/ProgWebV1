@@ -18,6 +18,14 @@ function estVide(champId) {
 	}
 }
 
+function confirmMdp(message){
+	if(window.confirm(message)) {
+		return true;
+	} else {
+		return false;
+	}
+	
+}
 
 /**
  * Permet de vérifier si les mots de passe sont identiques
@@ -26,8 +34,8 @@ function estVide(champId) {
  * @param idMdp1
  * @param idMdp2
  */
-function verifMdp(idMdp1, idMdp2, idDivErreur){
-	if(window.confirm('Etes-vous sur de vouloir changer de mot de passe ?')){				
+function verifMdp(idMdp1, idMdp2, idDivErreur, confirmation){
+	if(confirmation==true){				
 		var mdp1 = document.getElementById(idMdp1).value;
 		var mdp2 = document.getElementById(idMdp2).value;
 

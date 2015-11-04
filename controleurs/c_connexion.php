@@ -21,9 +21,17 @@ $_SESSION["prixObjMoyen"] = 1200;
 $_SESSION["objLong"] = "GSXR";
 $_SESSION["prixObjLong"] = 10000;
 
+
+echo($_SESSION["argentDepense"]);
+
+
+$_SESSION["reveDepasse"] = nbRevesDepasse($_SESSION["argentDepense"], $_SESSION["prixObjLong"]);
+
+
+
 switch ($action) {
 	case 'demandeConnexion' :
-		{
+		{			
 			include ('vues/v_connexion.php');
 			break;
 		}
