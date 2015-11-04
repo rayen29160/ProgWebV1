@@ -17,7 +17,7 @@
 		</form>
 		<span><h2>INSCRIPTION</h2></span>
 		
-		<a href="index.php?uc=formulaire"><img src="styles/GO.png"></a>
+		<a href="index.php?uc=inscription"><img src="styles/GO.png"></a>
 		</div>
 		<div id="prem">
 			<span id="span"><h3>Première visite ?</h3>
