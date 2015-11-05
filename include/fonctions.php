@@ -75,7 +75,7 @@
 		
 		$argentDepense = ($nbCigPeriodeUne * $prix6090) + ($nbCigPeriodeDeux * $prix9000) + ($nbCigPeriodeTrois * $prix0015);
 		
-		return number_format(round($argentDepense), 0, ',', ' ');
+		return round($argentDepense);
 	}
 	
 	/**
@@ -186,7 +186,7 @@
 	 */
 	function nbRevesDepasse($argentDepense, $prixReves){
 		$nb = $argentDepense / $prixReves;
-		return $nb;
+		return round($nb,1);
 	}
 	
 	

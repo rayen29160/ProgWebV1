@@ -22,11 +22,10 @@ $_SESSION["objLong"] = "GSXR";
 $_SESSION["prixObjLong"] = 10000;
 
 
-echo($_SESSION["argentDepense"]);
+$_SESSION["reveDepasse"] = nbRevesDepasse($_SESSION["argentDepense"] , 10000);
 
 
-$_SESSION["reveDepasse"] = nbRevesDepasse($_SESSION["argentDepense"], $_SESSION["prixObjLong"]);
-
+$nbRevesDep = $_SESSION["reveDepasse"];
 
 
 switch ($action) {
