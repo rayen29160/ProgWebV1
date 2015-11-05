@@ -7,6 +7,10 @@
 		echo "<BR>";
 		if($_SESSION["reveDepasse"]>=1) {
 			echo("Avec cet argent vous auriez pu payer ".$_SESSION["reveDepasse"]." fois votre ".$_SESSION["objLong"]);
+		} else {
+			if($_SESSION["reveDepasse"]<1 && $_SESSION["reveDepasse"]>=0.75) {
+				echo("Avec cet argent vous auriez presque pu payer votre ".$_SESSION["objLong"]);
+			}
 		}
 		
 	?>	
