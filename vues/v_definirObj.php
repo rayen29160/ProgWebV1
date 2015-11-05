@@ -12,4 +12,7 @@
 			<input type="submit" value = "Valider"/>
 		</form>
 	</body>
+	
+	<!-- Ce formulaire sera accessible lors de la deuxième étape. Il s'affichera lorsque l'utilisateur cliquera sur 'Motivation'
+		 si il n'a pas définit ses objectifs lors de son inscription -->
 </html>

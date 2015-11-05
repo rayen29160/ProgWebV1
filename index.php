@@ -11,6 +11,13 @@
 		case 'connexion':{
 			include("controleurs/c_connexion.php");break;
 		}
+		case 'accueil':{
+			if($_SESSION["connecte"]==1){
+				include("controleurs/c_accueil.php");break;
+			} else {
+				include("controleurs/c_connexion.php");
+			}
+		}
 		case 'contact':{
 			if($_SESSION["connecte"]==1){
 				include("controleurs/c_contact.php");
@@ -19,13 +26,8 @@
 			}
 			break;
 		}
-		case 'mentionsLegales':{
-			if($_SESSION["connecte"]==1){
-				include("controleurs/c_mentionsLegales.php");
-			} else {
-				include("controleurs/c_connexion.php");
-			}
-			break;
+		case 'mentionsLegales':{			
+			include("controleurs/c_mentionsLegales.php");break;
 		}
 		case 'stats':{
 			if($_SESSION["connecte"]==1){
@@ -44,7 +46,11 @@
 			break;
 		}
 		case 'moncompte':{
-			include("controleurs/c_moncompte.php");break;
+			if($_SESSION["connecte"]==1){
+				include("controleurs/c_moncompte.php");break;
+			} else {
+				include("controleurs/c_connexion.php");
+			}
 		}
 		case 'inscription':{			
 			include("controleurs/c_inscription.php");break;

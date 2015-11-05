@@ -1,6 +1,6 @@
 <link rel="stylesheet" type="text/css" href="styles/Style.css" />
 <html>
-
+	<!-- Ce formulaire sera vraiment fonctionnel lors de la prochaine étape, et sauvegardera les informations dans la base de données -->
 	<head><h1>Remplissez ce formulaire</h1>
 		<script src="scripts/verifChamps.js"></script>
 		<script language="javascript">
@@ -13,13 +13,13 @@
 		
 	<body>		
 		<form method="POST" action="index.php?uc=motivation" name="formInformations" onsubmit="return verificationRemplissage('age', 'ageDebut', 'nbCigarettes', 'marques, 'erreur');">
-		Quel âge avez-vous ?* <?php echo 'Peut être une liste déroulante avec choix date naissance ?'?><input type="text" id="age" name="age"/><br><br>
+		<span>Quel âge avez-vous ?* </span><?php echo 'Peut être une liste déroulante avec choix date naissance ?'?><input type="text" id="age" name="age"/><br><br>
 		
-		Age auquel vous avez commencé ?*  <input type="text" id="ageDebut" name="ageDebut"/><br><br>
+		<span>Age auquel vous avez commencé ?* </span> <input type="text" id="ageDebut" name="ageDebut"/><br><br>
 		
-		Combien de cigarettes fumez-vous par jour ?*  <input type="text" id="nbCigarettes" name="nbCigarettes"/><br><br>		
+		<span>Combien de cigarettes fumez-vous par jour ?* </span><input type="text" id="nbCigarettes" name="nbCigarettes"/><br><br>		
 		
-		Quelle marque de cigarettes achetez-vous ?* 
+		<span>Quelle marque de cigarettes achetez-vous ?* </span>
 		<select id="marques" name="listeMarques">
 			<option value="0" selected>--- Votre marque de cigarette ---</option>
 			<option value="1"><img src="images/Marloboro.PNG"/>Marlboro</option>

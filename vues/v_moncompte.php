@@ -1,9 +1,24 @@
 <html>
 	<head><script src="scripts/verifChamps.js"></script></head>
 	<body>
-		<h1><?php echo("Bonjour ".$_SESSION["id"]);?></h1>		
-		Entre votre nouveau mot de passe : <input type="password" id="mdp1"><br>
-		Confirmer votre nouveau mot de passe : <input type="password" id="mdp2"><div id="erreur"></div><br>
-		<input type="button" onClick="verifMdp('mdp1','mdp2', 'erreur', confirmMdp('Etes-vous sur de vouloir changer de mot de passe ?');" value="Changer le mot de passe">
+		<h1><?php echo("Bonjour ".$_SESSION["id"]);?></h1>
+		
+		<form method="POST" action="index.php?uc=moncompte">
+			<span>Entre votre nouveau mot de passe : </span><input type="password" id="mdp1"/>
+			<br><br>
+			<span>Confirmer votre nouveau mot de passe : </span><input type="password" id="mdp2"/><div id="erreur"></div>
+			<br>
+			<span>Votre adresse mail : </span><input type="text" id="mdp2" value="<?php echo $_SESSION["mail"];?>"/>
+			<br><br>
+			<span> Objectif à cours terme (exemple : un jeu vidéo)</span><input type="text" id="objCourt" name="court" value="<?php echo $_SESSION["objCourt"];?>"/><span> Prix (€)</span><input type="text" id="prixCourt" name="prixcourt" value="<?php echo $_SESSION["prixObjCourt"];?>"/>
+			<br><br>
+			<span> Objectif à moyen terme (exemple : un écran plat)</span><input type="text" id="objMoyen" name="moyen" value="<?php echo $_SESSION["objMoyen"];?>"/><span> Prix (€)</span><input type="text" id="prixMoyen" name="prixmoyen" value="<?php echo $_SESSION["prixObjMoyen"];?>"/>
+			<br><br>
+			<span> Objectif à long terme (exemple : une moto)</span><input type="text" id="objLong" name="long" value="<?php echo $_SESSION["objLong"];?>"/><span> Prix (€) </span><input type="text" id="prixLong" name="prixlong" value="<?php echo $_SESSION["prixObjLong"];?>"/>
+			<br><br>
+			<input type="button" onClick="verifMdp('mdp1','mdp2', 'erreur');" value="Valider">
+		</form>
+		
+		<!--  Ce formulaire enregistrera en base de données les informations modifiées pour la prochaine étape -->
 	</body>
 </html>

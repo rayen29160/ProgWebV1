@@ -6,6 +6,9 @@ $action = $_REQUEST ['action'];
 
 include('include/fonctions.php');
 
+
+//Initialisation des variables SESSION en dur
+//Pour la prochaine étape elles seront récupérées dans la base de données
 $_SESSION["age"]= 40;
 $_SESSION["ageDebut"]= 20;
 $_SESSION["nbCigarettes"]= 15;
@@ -13,20 +16,15 @@ $_SESSION["marque"]= "Marlboro";
 $_SESSION["argentDepense"]= argentDepense($_SESSION["age"], $_SESSION["ageDebut"], $_SESSION["nbCigarettes"], $_SESSION["marque"]);
 $_SESSION["dateArret"]= 38;
 $_SESSION["argentEconomise"]= argentEconomise($_SESSION["dateArret"], $_SESSION["nbCigarettes"], $_SESSION["marque"]);
-
 $_SESSION["objCourt"] = "Jeu vidéo";
 $_SESSION["prixObjCourt"] = 50;
 $_SESSION["objMoyen"] = "Ordinateur";
 $_SESSION["prixObjMoyen"] = 1200;
 $_SESSION["objLong"] = "GSXR";
 $_SESSION["prixObjLong"] = 10000;
-
-
+$_SESSION["choixObjectifs"] = "oui";
+$_SESSION["mail"] = "abc@gmail.com";
 $_SESSION["reveDepasse"] = nbRevesDepasse($_SESSION["argentDepense"] , 10000);
-
-
-$nbRevesDep = $_SESSION["reveDepasse"];
-
 
 switch ($action) {
 	case 'demandeConnexion' :

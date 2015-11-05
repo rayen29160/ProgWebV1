@@ -18,37 +18,32 @@ function estVide(champId) {
 	}
 }
 
-function confirmMdp(message){
-	if(window.confirm(message)) {
-		return true;
-	} else {
-		return false;
-	}
-	
-}
-
 /**
- * Permet de vérifier si les mots de passe sont identiques
- * et qu'ils fassent plus de 7 caractères
+ * Permet de vérifier si les mots de passe sont identiques et qu'ils fassent plus de 7 caractères
+ * Ecrit un message d'erreur dans la div dont l'id a été précisé en paramètre
  * 
  * @param idMdp1
  * @param idMdp2
+ * @param idDivErreur
  */
-function verifMdp(idMdp1, idMdp2, idDivErreur, confirmation){
-	if(confirmation==true){				
-		var mdp1 = document.getElementById(idMdp1).value;
-		var mdp2 = document.getElementById(idMdp2).value;
+function verifMdp(idMdp1, idMdp2, idDivErreur){
+	
+	var submit = true;			
+	var mdp1 = document.getElementById(idMdp1).value;
+	var mdp2 = document.getElementById(idMdp2).value;
 
-		if(mdp1.length < 7 && mdp2.length < 7)
-		{
-			document.getElementById(idDivErreur).innerHTML = '<font color="red">Les mots de passe doivent contenir minimum 7 caracteres</font>';
-		}
-					
-		if(mdp1!=mdp2) {
-			document.getElementById(idDivErreur).innerHTML = '<font color="red">Les mots de passe ne sont pas identiques</font>';
-			mdp2 = "";
-		}
+	if(mdp1.length < 7 && mdp2.length < 7){
+		document.getElementById(idDivErreur).innerHTML = '<font color="red">Les mots de passe doivent contenir minimum 7 caracteres</font>';
+		submit = false;
 	}
+					
+	if(mdp1!=mdp2){
+		document.getElementById(idDivErreur).innerHTML = '<font color="red">Les mots de passe ne sont pas identiques</font>';
+		document.getElementById(idMdp2).value = "";
+		submit = false;
+	}
+	
+	return submit;
 }
 
 /**
