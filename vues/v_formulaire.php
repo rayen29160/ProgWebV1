@@ -27,7 +27,7 @@
 
 	<div id="inscri">
 	<h1>Dites m'en un peu plus sur vous ...</h1>
-		<form method="POST" action="index.php?uc=motivation" name="formInformations" onsubmit="return verificationRemplissage('age', 'ageDebut', 'nbCigarettes', 'marques, 'erreur');">
+		<form method="POST" action="index.php?uc=motivation" name="formInformations" onsubmit="return (verificationRemplissage('age', 'ageDebut', 'nbCigarettes', 'marques', 'erreur') && verifNbCigarette('nbCigarettes', 'erreur') && verifMontantsObj('prixCourt', 'prixMoyen', 'prixLong', 'erreur') && verifAges('age', 'ageDebut', 'erreur'));">
 		<span>Quel âge avez-vous ?* </span><input type="text" id="age" name="age"/><br><br>
 		
 		<span>Age auquel vous avez commencé ?* </span> <input type="text" id="ageDebut" name="ageDebut"/><br><br>
@@ -48,7 +48,7 @@
 			<option value="9">News</option>
 			<option value="10">...</option>
 		</select>
-		<div id="erreur"></div>
+		<br>
 		<br>
 		<span>Voulez-vous définir vos objectifs maintenant ?</span><INPUT type="radio" name="choix" value="oui" onclick="afficher('visible');" checked/>Oui<INPUT type="radio" name="choix" value="non" onclick="afficher('hidden');"/>Non
 		<br><br>
@@ -63,8 +63,8 @@
 		
 		<font color="red">Les champs * sont des champs obligatoires</font>
 		
-		<br><br>
-		
+		<br>
+		<div id="erreur"></div>
 		<input type="submit" name="nom" value="Envoyer">
 		
 		</form>
