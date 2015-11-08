@@ -1,4 +1,12 @@
 <html>
+<link rel="stylesheet" type="text/css" href="styles/Style.css" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script src="jquery/jquery.js"></script>
+<img src="styles/FOND2.png" id="bg" alt="">
+	<div id="header">
+	<img alt="banniere" src="styles/bannières+traits.png">
+</div>
+
 	<div id="menu">
 		<ul id="menuPrincipal">	
 			<li><a href="index.php?uc=accueil">Accueil</a></li>

@@ -1,7 +1,11 @@
+
 <link rel="stylesheet" type="text/css" href="styles/Style.css" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script src="jquery/jquery.js"></script>
 <html>
+
 	<!-- Ce formulaire sera vraiment fonctionnel lors de la prochaine étape, et sauvegardera les informations dans la base de données -->
-	<head><h1>Remplissez ce formulaire</h1>
+	<head>
 		<script src="scripts/verifChamps.js"></script>
 		<script language="javascript">
 			function afficher(etat) 
@@ -11,9 +15,20 @@
 		</script>
 	</head>
 		
-	<body>		
+	<body>	
+	<img src="styles/FOND2.png" id="bg" alt="">
+	<div id="header">
+	<img alt="banniere" src="styles/bannièressimple.png">
+</div>	
+	<div id="acceuil">
+	<div id="imgcochon2">
+		<img alt="" src="styles/avatarcochonPoint.png">
+	</div>
+
+	<div id="inscri">
+	<h1>Dites m'en un peu plus sur vous ...</h1>
 		<form method="POST" action="index.php?uc=motivation" name="formInformations" onsubmit="return verificationRemplissage('age', 'ageDebut', 'nbCigarettes', 'marques, 'erreur');">
-		<span>Quel âge avez-vous ?* </span><?php echo 'Peut être une liste déroulante avec choix date naissance ?'?><input type="text" id="age" name="age"/><br><br>
+		<span>Quel âge avez-vous ?* </span><input type="text" id="age" name="age"/><br><br>
 		
 		<span>Age auquel vous avez commencé ?* </span> <input type="text" id="ageDebut" name="ageDebut"/><br><br>
 		
@@ -38,11 +53,11 @@
 		<span>Voulez-vous définir vos objectifs maintenant ?</span><INPUT type="radio" name="choix" value="oui" onclick="afficher('visible');" checked/>Oui<INPUT type="radio" name="choix" value="non" onclick="afficher('hidden');"/>Non
 		<br><br>
 		<div id="objectifs">
-			<span> Objectif à cours terme (exemple : un jeu vidéo)</span><input type="text" id="objCourt" name="court"/><span> Prix (€)</span><input type="text" id="prixCourt" name="prixcourt"/>
+			<span> Objectif à cours terme<br> (exemple : un jeu vidéo)</span><input type="text" id="objCourt" name="court"/><span> Prix (€)</span><input type="text" id="prixCourt" name="prixcourt"/>
 			<br><br>
-			<span> Objectif à moyen terme (exemple : un écran plat)</span><input type="text" id="objMoyen" name="moyen"/><span> Prix (€)</span><input type="text" id="prixMoyen" name="prixmoyen"/>
+			<span> Objectif à moyen terme<br> (exemple : un écran plat)</span><input type="text" id="objMoyen" name="moyen"/><span> Prix (€)</span><input type="text" id="prixMoyen" name="prixmoyen"/>
 			<br><br>
-			<span> Objectif à long terme (exemple : une moto)</span><input type="text" id="objLong" name="long"/><span> Prix (€) </span><input type="text" id="prixLong" name="prixlong"/>
+			<span> Objectif à long terme<br> (exemple : une moto)</span><input type="text" id="objLong" name="long"/><span> Prix (€) </span><input type="text" id="prixLong" name="prixlong"/>
 			<br><br>
 		</div>
 		
@@ -53,5 +68,7 @@
 		<input type="submit" name="nom" value="Envoyer">
 		
 		</form>
+		</div>
+		</div>
 	</body>
 </html>

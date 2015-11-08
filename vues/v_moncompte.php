@@ -1,8 +1,15 @@
 <html>
 	<head><script src="scripts/verifChamps.js"></script></head>
 	<body>
+	
+	<div id="acceuil">
 		<h1><?php echo("Bonjour ".$_SESSION["id"]);?></h1>
+		<div id="imgcochon">
 		
+		<img src="styles/cochonsilhouette.png">
+		
+		</div>
+		<div id="formu">
 		<form method="POST" action="index.php?uc=moncompte">
 			<span>Entre votre nouveau mot de passe : </span><input type="password" id="mdp1"/>
 			<br><br>
@@ -18,7 +25,8 @@
 			<br><br>
 			<input type="button" onClick="verifMdp('mdp1','mdp2', 'erreur');" value="Valider">
 		</form>
-		
+		</div>
+		</div>
 		<!--  Ce formulaire enregistrera en base de données les informations modifiées pour la prochaine étape -->
 	</body>
 </html>

@@ -16,6 +16,7 @@
 	 */
 	function connexion($id, $mdp){		
 		if($id=="abc" && $mdp=="abc") {
+			if(!isset($_SESSION))
 			session_start();						
 			$_SESSION["connecte"] = 1 ;
 			return true;

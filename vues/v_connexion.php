@@ -1,8 +1,14 @@
 <link rel="stylesheet" type="text/css" href="styles/Style.css" />
-
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script src="jquery/jquery.js"></script>
 <html>
+<img src="styles/FOND2.png" id="bg" alt="">
+	<div id="header">
+	<img alt="banniere" src="styles/bannièressimple.png">
+</div>
+
 	<head>
-	
+		
 	</head>
 	<div id=main>
 	<div id="con">
@@ -12,7 +18,7 @@
 			<span id="context"><h2>CONNEXION</h2></span>
 			<input type="text" name="id" placeholder="Identifiant" /><br>
 		     <input type="password" name="mdp" placeholder="Mot de passe"/><br>
-			<span id='go'><input type="submit" value=""/></span>		
+			<span id='go'><input src="styles/GO.png" name="submit" type="image"></span>		
 		</form>
 		<span><h2>INSCRIPTION</h2></span>
 		

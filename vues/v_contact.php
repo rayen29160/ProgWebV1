@@ -4,7 +4,7 @@
 		<script src="scripts/verifChamps.js"></script>
 	</head>
 	<body>
-		<div>
+		<div id="acceuil">
 			<span>Votre nom* : </span><input type="text" id="nom"/><div id="erreur1"></div><br>
 			<span>Votre adresse email* : </span><input type="text" id="email"/><div id="erreur2"></div><br>
 			<span>Votre message* : </span><input type="textarea" id="message"/><div id="erreur3"></div><br>
