@@ -4,7 +4,7 @@
 <script src="jquery/jquery.js"></script>
 <img src="styles/FOND2.png" id="bg" alt="">
 	<div id="header">
-	<img alt="banniere" src="styles/bannières+traits.png">
+	<img alt="banniere" src="styles/bannieres+traits.png">
 </div>
 
 	<div id="menu">

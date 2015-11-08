@@ -4,7 +4,7 @@
 <html>
 <img src="styles/FOND2.png" id="bg" alt="">
 	<div id="header">
-	<img alt="banniere" src="styles/bannièressimple.png">
+	<img alt="banniere" src="styles/bannieressimple.png">
 </div>
 
 	<head>
