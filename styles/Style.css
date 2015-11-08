@@ -149,6 +149,7 @@
 	position: absolute;
 	color: #CB7778;
 	margin-bottom:1%;
+	font-size: 0.9vw;
 }
 
 #image {
@@ -221,8 +222,8 @@ body b {
 
 #imgcochon {
 	float: left;
-	width: auto%;
-	height: 100%;
+	width: 50%;
+	height: 0;
 }
 
 #imgcochon img {
@@ -303,3 +304,11 @@ body b {
 	margin-top:10%;
 	
 }
+
+#texte h1{
+	width:55%;
+}
+#ici {
+	margin-right:10% !important;
+}
+
