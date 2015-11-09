@@ -1,3 +1,4 @@
+<!DOCTYPE HTML>
 <html>
 	<head><script src="scripts/verifChamps.js"></script>
 	<link rel="stylesheet" type="text/css" href="styles/Style.css" />
@@ -6,7 +7,7 @@
 	<body>
 	<img src="styles/FOND2.png" id="bg" alt="">
 	<div id="header">
-	<img alt="banniere" src="styles/bannièressimple.png">
+	<img alt="banniere" src="styles/bannieressimple.png">
 </div>
 	<div  id="acceuil">
 	<div id="imgcochon2">
@@ -23,6 +24,7 @@
 		</form>
 		</div>
 		</div>
+		
 	</body>
 	
 	<!-- L'inscription marchera lors de la prochaine étape et sauvegardera les informations dans la base de données.

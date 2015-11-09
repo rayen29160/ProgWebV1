@@ -1,4 +1,4 @@
-
+<!DOCTYPE HTML>
 <link rel="stylesheet" type="text/css" href="styles/Style.css" />
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script src="jquery/jquery.js"></script>
@@ -18,7 +18,7 @@
 	<body>	
 	<img src="styles/FOND2.png" id="bg" alt="">
 	<div id="header">
-	<img alt="banniere" src="styles/bannièressimple.png">
+	<img alt="banniere" src="styles/bannieressimple.png">
 </div>	
 	<div id="acceuil">
 	<div id="imgcochon2">

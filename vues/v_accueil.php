@@ -1,3 +1,4 @@
+<!DOCTYPE HTML>
 <html>
 	<head>
 		
@@ -6,7 +7,7 @@
 		<div id="acceuil">
 		
 		<div id=image>
-				<img src="styles/cochon seul.png">
+				<img src="styles/cochonseul.png" alt="">
 			
 		</div>	
 		
@@ -16,10 +17,10 @@
 				echo("<SPAN>Depuis que vous fumez vous avez dépensé environ <br></SPAN> <h1>".number_format($_SESSION["argentDepense"], 0, ',', ' ')."€</h1><br>");		
 				echo "<BR>";
 				if($_SESSION["reveDepasse"]>=1) {
-					echo("<SPAN id=ici>Avec cet argent vous auriez pu payer ".$_SESSION["reveDepasse"]." fois votre ".$_SESSION["objLong"]."</SPAN>");
+					echo("<SPAN>Avec cet argent vous auriez pu payer ".$_SESSION["reveDepasse"]." fois votre ".$_SESSION["objLong"]."</SPAN>");
 				} else {
 					if($_SESSION["reveDepasse"]<1 && $_SESSION["reveDepasse"]>=0.75) {
-						echo("<SPAN id=ici>Avec cet argent vous auriez presque pu payer votre ".$_SESSION["objLong"]."</SPAN>");
+						echo("<SPAN> Avec cet argent vous auriez presque pu payer votre ".$_SESSION["objLong"]."</SPAN>");
 					}
 				}		
 			?>

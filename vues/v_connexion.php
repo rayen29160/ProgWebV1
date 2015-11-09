@@ -1,3 +1,4 @@
+<!DOCTYPE HTML>
 <link rel="stylesheet" type="text/css" href="styles/Style.css" />
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script src="jquery/jquery.js"></script>
@@ -35,7 +36,9 @@
 		
 		</div>
 		
-		
+		<div id="footer">
+			<a href="vues/v_mentions.php">mentions legals</a>
+		</div>
 	</body>
 </html>
 	

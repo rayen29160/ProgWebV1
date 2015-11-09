@@ -1,3 +1,4 @@
+<!DOCTYPE HTML>
 <html>
 <link rel="stylesheet" type="text/css" href="styles/Style.css" />
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>

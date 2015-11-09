@@ -1,3 +1,4 @@
+<!DOCTYPE HTML>
 <html>
 	<head><h1>Vous devez définir vos objectifs</h1></head>	
 	<body>
