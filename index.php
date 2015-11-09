@@ -59,7 +59,7 @@
 			include("controleurs/c_formulaire.php");break;
 		}
 		case 'deconnecter':{
-			if($_SESSION["connecte"]==1){
+			if(isset($_SESSION)){
 				include("controleurs/c_deconnecter.php");
 			} else {
 				include("controleurs/c_connexion.php");

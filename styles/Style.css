@@ -36,6 +36,17 @@
 	color: #CB7778;
 	font-family: 'Lato';
 }
+#prem {
+	
+	background-color: white;
+	width: 28% !important;
+	height: 48%;
+	float: left;
+	margin-left: 1%;
+	margin-top: 21%;
+	font-family: 'Lato';
+	padding-bottom:5vw;
+}
 
 #con h2 {
 	margin-top: 5%;
@@ -47,7 +58,7 @@
 #con input {
 	margin-left: 90%;
 	width: 100%;
-	height: 10%;
+	    height: 2vw;
 }
 
 #go input {
@@ -57,15 +68,7 @@
 	border: none;
 }
 
-#prem {
-	background-color: white;
-	width: 28% !important;
-	height: 48%;
-	float: left;
-	margin-left: 1%;
-	margin-top: 21%;
-	font-family: 'Lato';
-}
+
 
 #span {
 	text-align: center;
@@ -497,6 +500,16 @@ body b {
 #footer a{
 	text-decoration:none;
 	color:#CB7778;
+}
+ form input[type=submit]{
+	
+	
+	width:8vw;
+	height:2vw;
+	border:none;
+	background-color : #A76668; 
+	color:white;
+
 }
 
 
