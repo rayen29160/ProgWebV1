@@ -45,7 +45,7 @@
 	margin-left: 1%;
 	margin-top: 21%;
 	font-family: 'Lato';
-	padding-bottom:5vw;
+	padding-bottom:3.7vw;
 }
 
 #con h2 {
@@ -94,7 +94,7 @@
 }
 
 #prem p {
-	font-size: 2vw;
+	font-size: 2.3vw;
 }
 
 #context h2 {
@@ -509,6 +509,7 @@ body b {
 	border:none;
 	background-color : #A76668; 
 	color:white;
+	margin-bottom:2%;
 
 }
 
