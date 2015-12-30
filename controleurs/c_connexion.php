@@ -5,10 +5,11 @@ if (! isset ( $_REQUEST ['action'] )) {
 $action = $_REQUEST ['action'];
 
 include('include/fonctions.php');
-
+include('include/fonctionsbdd.php');
 
 //Initialisation des variables SESSION en dur
 //Pour la prochaine étape elles seront récupérées dans la base de données
+
 $_SESSION["age"]= 40;
 $_SESSION["ageDebut"]= 20;
 $_SESSION["nbCigarettes"]= 15;
