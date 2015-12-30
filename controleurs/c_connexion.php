@@ -5,10 +5,13 @@ if (! isset ( $_REQUEST ['action'] )) {
 $action = $_REQUEST ['action'];
 
 include('include/fonctions.php');
-include('include/fonctionsbdd.php');
 
 //Initialisation des variables SESSION en dur
 //Pour la prochaine étape elles seront récupérées dans la base de données
+
+
+
+
 
 $_SESSION["age"]= 40;
 $_SESSION["ageDebut"]= 20;
@@ -39,10 +42,12 @@ switch ($action) {
 			$id = $_REQUEST ['id'];
 			$mdp = $_REQUEST ['mdp'];			
 			
+
+			$tabInfo =	$pdo->getInfosUtilisateur($id, $mdp);
 			//Teste si l'identifiant et le mot de passe sont bons
-			if(connexion($id,$mdp))
+			if(sizeof($tabInfo)>1)
 			{
-				//Si oui, affiche la page d'accueil et le sommaire					
+				//Si oui, affiche la page d'accueil et le sommaire				
 				$_SESSION["id"] = $id;
 				include('vues/v_accueil.php');
 				include('vues/v_sommaire.php');

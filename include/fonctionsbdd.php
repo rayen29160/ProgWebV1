@@ -1,10 +1,10 @@
 <?php 
 
 class PdoGsb {
-	private static $serveur = 'mysql:host=10.29.133.72';
-	private static $bdd = 'dbname=GSB';
-	private static $user = 'rannou-n';
-	private static $mdp = 'mygroupe7';
+	private static $serveur = 'mysql:host=127.0.0.1';
+	private static $bdd = 'dbname=arretecig';
+	private static $user = 'root';
+	private static $mdp = '';
 	private static $monPdo;
 	private static $monPdoGsb = null;
 	/**
@@ -149,6 +149,9 @@ class PdoGsb {
 		$rs->bindParam ( ":newMdp", $newMdp );
 		PdoGsb::$monPdo->exec ( $req );
 	}
+	
+	
+	
 	
 }
 ?>

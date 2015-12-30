@@ -1,5 +1,6 @@
 <?php
-	
+	include('include/fonctionsbdd.php');
+	$pdo = PdoGsb::getPdoGsb ();	
 	session_start();
 	
 	if(!isset($_REQUEST["uc"])){
