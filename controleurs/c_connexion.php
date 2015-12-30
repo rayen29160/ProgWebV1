@@ -49,6 +49,7 @@ switch ($action) {
 			{
 				//Si oui, affiche la page d'accueil et le sommaire				
 				$_SESSION["id"] = $id;
+				$_SESSION["connecte"]=1;
 				include('vues/v_accueil.php');
 				include('vues/v_sommaire.php');
 			} else {
