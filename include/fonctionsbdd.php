@@ -138,15 +138,13 @@ class PdoGsb {
 	/**
 	 * Met à jour le mot de passe de l'utilisateur
 	 *
-	 * @param int $idUtil
+	 * @param int $login
 	 * @param String $newMdp
 	 */
-	public function majMdp($idUtil, $newMdp) {
-		$req = "update utilisateur set utilisateur.mdp = :newMdp
-		where idUtil = :idUtil";
-		$rs = PdoGsb::$monPdo->prepare ( $req );
-		$rs->bindParam ( ":idUtil", $idUtil );
-		$rs->bindParam ( ":newMdp", $newMdp );
+	public function majMdp($login, $newMdp) {
+		$req = "update utilisateur set mdp = '"
+				.$newMdp."'
+		where login = '".$login."';";			
 		PdoGsb::$monPdo->exec ( $req );
 	}
 	

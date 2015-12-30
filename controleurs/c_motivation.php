@@ -6,7 +6,7 @@
 	$pourcentageMoyen = pourcentageObjectif($argentEconomise, $_SESSION["prixObjMoyen"]);
 	$pourcentageLong = pourcentageObjectif($argentEconomise, $_SESSION["prixObjLong"]);
 	
-	if($_SESSION["choixObjectifs"]=="oui") {
+	if($_SESSION["choixObjectifs"]==1) {
 		include("vues/v_sommaire.php");
 		include("vues/v_motivation.php");
 	} else {

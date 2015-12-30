@@ -12,10 +12,10 @@
 		</div>
 		<div id="formu">
 		<h1><?php echo("Bonjour ".$_SESSION["id"]);?></h1>
-		<form method="POST" action="index.php?uc=moncompte" onsubmit=" return (verifMdp('mdp1','mdp2', 'erreur') && VerifMail('mail', 'erreur') && verifMontantsObj('objCourt', 'objMoyen', 'objLong', 'erreur'));">
-			<span>Entre votre nouveau mot de passe : </span><input type="password" id="mdp1"/>
+		<form method="POST" action="index.php?uc=moncompte" onsubmit=" return (verifMdp('mdp1','mdp2', 'erreur') && VerifMail('mail', 'erreur') && verifMontantsObj('prixCourt', 'prixMoyen', 'prixlong', 'erreur'));">
+			<span>Entre votre nouveau mot de passe : </span><input type="password" id="mdp1" name="mdp1"/>
 			<br><br>
-			<span>Confirmer votre nouveau mot de passe : </span><input type="password" id="mdp2"/>
+			<span>Confirmer votre nouveau mot de passe : </span><input type="password" id="mdp2" name="mdp2"/>
 			<br><br>
 			<span>Votre adresse mail : </span><input type="text" id="mail" value="<?php echo $_SESSION["mail"];?>"/>
 			<br><br>

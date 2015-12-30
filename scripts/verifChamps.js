@@ -183,6 +183,7 @@ function verifMontantsObj(idPrixObjCourt, idPrixObjMoy, idPrixObjLong, idDivErre
 		if((prixCourt < prixMoy) && (prixMoy < prixLong)){
 			return true;
 		} else {
+			alert(typeof(prixCourt));
 			document.getElementById(idDivErreur).innerHTML = "<FONT color='red'>Le prix de l'objectif a court terme doit etre inferieur a celui a moyen terme. <BR>" +
 			"Le prix de l'objectif a moyen terme doit aussi etre inferieur a celui a long terme !</FONT>";
 			return false;
