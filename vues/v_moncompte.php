@@ -17,7 +17,7 @@
 			<br><br>
 			<span>Confirmer votre nouveau mot de passe : </span><input type="password" id="mdp2" name="mdp2"/>
 			<br><br>
-			<span>Votre adresse mail : </span><input type="text" id="mail" value="<?php echo $_SESSION["mail"];?>"/>
+			<span>Votre adresse mail : </span><input type="text" name="mail" id="mail" value="<?php echo $_SESSION["mail"];?>"/>
 			<br><br>
 			<span> Objectif à cours terme <br>(exemple : un jeu vidéo)</span><input type="text" id="objCourt" name="court" value="<?php echo $_SESSION["objCourt"];?>"/><span> Prix (€)</span><input type="text" id="prixCourt" name="prixcourt" value="<?php echo $_SESSION["prixObjCourt"];?>"/>
 			<br><br>

@@ -19,6 +19,7 @@ switch ($action) {
 			$mdp = $_REQUEST ['mdp'];
 			$tabInfo =	$pdo->getInfosUtilisateur($id, $mdp);
 			
+			
 			//Teste si l'identifiant et le mot de passe sont bons
 			if(sizeof($tabInfo)>1)
 			{
@@ -31,16 +32,31 @@ switch ($action) {
 				$_SESSION["marque"]= $tabInfo["marque"];
 				$_SESSION["argentDepense"]= argentDepense($_SESSION["age"], $_SESSION["ageDebut"], $_SESSION["nbCigarettes"], $_SESSION["marque"]);
 				$_SESSION["dateArret"]=  $tabInfo["dateArret"];
-				$_SESSION["argentEconomise"]= argentEconomise($_SESSION["dateArret"], $_SESSION["nbCigarettes"], $_SESSION["marque"]);
+				$_SESSION["argentEconomise"]= argentEconomise(convertDateBdToSite($_SESSION["dateArret"]), $_SESSION["nbCigarettes"], $_SESSION["marque"]);
+				$_SESSION["idObjC"] = $tabInfo["idObjC"];
 				$_SESSION["objCourt"] = $tabInfo["nomObjC"];
 				$_SESSION["prixObjCourt"] = $tabInfo["prixObjC"];
+				$_SESSION["idObjM"] = $tabInfo["idObjM"];
 				$_SESSION["objMoyen"] = $tabInfo["nomObjM"];
 				$_SESSION["prixObjMoyen"] = $tabInfo["prixObjM"];
+				$_SESSION["idObjL"] = $tabInfo["idObjL"];
 				$_SESSION["objLong"] = $tabInfo["nomObjL"];
 				$_SESSION["prixObjLong"] = $tabInfo["prixObjL"];
 				$_SESSION["choixObjectifs"] = $tabInfo["choixObjectifs"];			
 				$_SESSION["mail"] = $tabInfo["mail"];
 				$_SESSION["reveDepasse"] = nbRevesDepasse($_SESSION["argentDepense"] , $_SESSION["prixObjLong"]);
+				
+				$pdo->majArgentEconomise($_SESSION ["id"], floatval($_SESSION["argentEconomise"]));
+				$pdo->majArgentDepense( $_SESSION ["id"], $_SESSION["argentDepense"]);
+				
+				/**
+				 * 
+				 * corriger problème avec argent economisé et dates
+				 * 
+				 * 
+				 */
+				echo($_SESSION["argentEconomise"]);
+				
 				include('vues/v_accueil.php');
 				include('vues/v_sommaire.php');
 			} else {

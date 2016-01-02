@@ -59,13 +59,12 @@ class PdoGsb {
 	 * @param int $prixObjC
 	 */
 	public function majObjectifCourt($idObjC, $nomObjC, $prixObjC) {		
-			$req = "update objcourt set objcourt.nomObjC = :nomObjC, objcourt.prixObjC = :prixObjC
-			where idObjC = :idObjC";
-			$rs = PdoGsb::$monPdo->prepare ( $req );
-			$rs->bindParam ( ":nomObjC", $nomObjC );
-			$rs->bindParam ( ":prixObjC", $prixObjC );
-			$rs->bindParam ( ":idObjC", $idObjC );
+			$req = "update objcourt set objcourt.nomObjC = '".$nomObjC."', objcourt.prixObjC = ".$prixObjC."
+			where idObjC = ".$idObjC.";";		
 			PdoGsb::$monPdo->exec ( $req );
+			
+			$_SESSION["objCourt"] = $nomObjC;
+			$_SESSION["prixObjCourt"] = $prixObjC;
 	}
 	
 	/**
@@ -76,13 +75,12 @@ class PdoGsb {
 	 * @param int $prixObjM
 	 */
 	public function majObjectifMoyen($idObjM, $nomObjM, $prixObjM) {
-		$req = "update objmoyen set objmoyen.nomObjM = :nomObjM, objmoyen.prixObjM = :prixObjM
-		where idObjM = :idObjM";
-		$rs = PdoGsb::$monPdo->prepare ( $req );
-		$rs->bindParam ( ":nomObjM", $nomObjM );
-		$rs->bindParam ( ":prixObjM", $prixObjM );
-		$rs->bindParam ( ":idObjM", $idObjM );
+		$req = "update objmoyen set objmoyen.nomObjM = '".$nomObjM."', objmoyen.prixObjM = ".$prixObjM."
+		where idObjM = ".$idObjM.";";		
 		PdoGsb::$monPdo->exec ( $req );
+		
+		$_SESSION["objMoyen"] = $nomObjM;
+		$_SESSION["prixObjMoyen"] = $prixObjM;
 	}
 	
 	
@@ -94,28 +92,24 @@ class PdoGsb {
 	 * @param int $prixObjL
 	 */
 	public function majObjectifLong($idObjL, $nomObjL, $prixObjL) {
-		$req = "update objlong set objlong.nomObjL = :nomObjL, objcourt.prixObjL = :prixObjL
-		where idObjL = :idObjL";
-		$rs = PdoGsb::$monPdo->prepare ( $req );
-		$rs->bindParam ( ":nomObjL", $nomObjL );
-		$rs->bindParam ( ":prixObjL", $prixObjL );
-		$rs->bindParam ( ":idObjL", $idObjL );
+		$req = "update objlong set objlong.nomObjL = '".$nomObjL."', objcourt.prixObjL = ".$prixObjL."
+		where idObjL = ".$idObjL.";";		
 		PdoGsb::$monPdo->exec ( $req );
+		
+		$_SESSION["objLong"] = $nomObjL;
+		$_SESSION["prixObjLong"] = $prixObjL;
 	}
 	
 	
 	/**
 	 * Met à jour l'argent économisé par l'utilisateur
 	 * 
-	 * @param int $idUtil
+	 * @param int $login
 	 * @param double $argentEconomise
 	 */
-	public function majArgentEconomise($idUtil, $argentEconomise) {
-		$req = "update utilisateur set utilisateur.argentEconomise = :argentEconomise
-		where idUtil = :idUtil";
-		$rs = PdoGsb::$monPdo->prepare ( $req );
-		$rs->bindParam ( ":idUtil", $idUtil );
-		$rs->bindParam ( ":argentEconomise", $argentEconomise );
+	public function majArgentEconomise($login, $argentEconomise) {
+		$req = "update utilisateur set argentEconomise = ".$argentEconomise."
+		where login = '".$login."';";	
 		PdoGsb::$monPdo->exec ( $req );
 	}
 	
@@ -123,33 +117,26 @@ class PdoGsb {
 	/**
 	 * Met à jour l'argent dépensé par l'utilisateur
 	 * 
-	 * @param int $idUtil
+	 * @param int $login
 	 * @param double $argentDepense
 	 */
-	public function majArgentDepense($idUtil, $argentDepense) {
-		$req = "update utilisateur set utilisateur.argentDepense = :argentDepense
-		where idUtil = :idUtil";
-		$rs = PdoGsb::$monPdo->prepare ( $req );
-		$rs->bindParam ( ":idUtil", $idUtil );
-		$rs->bindParam ( ":argentEconomise", $argentEconomise );
+	public function majArgentDepense($login, $argentDepense) {
+		$req = "update utilisateur set argentDepense = ".$argentDepense."
+		where login = '".$login."';";
 		PdoGsb::$monPdo->exec ( $req );
 	}
 	
 	/**
-	 * Met à jour le mot de passe de l'utilisateur
+	 * Met à jour le mot de passe et l'adresse mail de l'utilisateur de l'utilisateur
 	 *
 	 * @param int $login
 	 * @param String $newMdp
+	 * @param String $mail 
 	 */
-	public function majMdp($login, $newMdp) {
-		$req = "update utilisateur set mdp = '"
-				.$newMdp."'
+	public function majMdp($login, $newMdp, $mail) {
+		$req = "update utilisateur set mdp = '".$newMdp."', mail ='".$mail."'
 		where login = '".$login."';";			
-		PdoGsb::$monPdo->exec ( $req );
+		PdoGsb::$monPdo->exec ( $req );		
 	}
-	
-	
-	
-	
 }
 ?>

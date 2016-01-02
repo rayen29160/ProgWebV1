@@ -190,6 +190,21 @@
 		return round($nb,1);
 	}
 	
+
+	function convertDateBdToSite($dateBd){
+		$tab = $tab = explode("-",$dateBd);
+	
+		return $tab[2]."/".$tab[1]."/".$tab[0];
+	}
+	
+	function convertDateSiteToBd($dateSite){
+		$tab = $tab = explode("/",$dateBd);
+	
+		return $tab[2]."-".$tab[1]."-".$tab[0];
+	}
+	
+	
+	
 	
 	
 ?>
