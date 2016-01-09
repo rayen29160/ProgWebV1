@@ -91,7 +91,7 @@
 	function argentEconomise($dateArret, $nbCigarettesJours, $marqueCigarettes) {
 		global $prix0015;		
 		$dureeArretJours = dureeEnJours($dateArret);		
-		return number_format(round($dureeArretJours * $nbCigarettesJours * $prix0015));		
+		return round($dureeArretJours * $nbCigarettesJours * $prix0015);		
 	}
 	
 	/**

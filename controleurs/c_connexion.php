@@ -31,8 +31,8 @@ switch ($action) {
 				$_SESSION["nbCigarettes"]= $tabInfo["nbCigarettes"];
 				$_SESSION["marque"]= $tabInfo["marque"];
 				$_SESSION["argentDepense"]= argentDepense($_SESSION["age"], $_SESSION["ageDebut"], $_SESSION["nbCigarettes"], $_SESSION["marque"]);
-				$_SESSION["dateArret"]=  $tabInfo["dateArret"];
-				$_SESSION["argentEconomise"]= argentEconomise(convertDateBdToSite($_SESSION["dateArret"]), $_SESSION["nbCigarettes"], $_SESSION["marque"]);
+				$_SESSION["dateArret"]=  convertDateBdToSite($tabInfo["dateArret"]);
+				$_SESSION["argentEconomise"]= argentEconomise($_SESSION["dateArret"], $_SESSION["nbCigarettes"], $_SESSION["marque"]);				
 				$_SESSION["idObjC"] = $tabInfo["idObjC"];
 				$_SESSION["objCourt"] = $tabInfo["nomObjC"];
 				$_SESSION["prixObjCourt"] = $tabInfo["prixObjC"];
@@ -47,15 +47,7 @@ switch ($action) {
 				$_SESSION["reveDepasse"] = nbRevesDepasse($_SESSION["argentDepense"] , $_SESSION["prixObjLong"]);
 				
 				$pdo->majArgentEconomise($_SESSION ["id"], floatval($_SESSION["argentEconomise"]));
-				$pdo->majArgentDepense( $_SESSION ["id"], $_SESSION["argentDepense"]);
-				
-				/**
-				 * 
-				 * corriger problème avec argent economisé et dates
-				 * 
-				 * 
-				 */
-				echo($_SESSION["argentEconomise"]);
+				$pdo->majArgentDepense( $_SESSION ["id"], $_SESSION["argentDepense"]);				
 				
 				include('vues/v_accueil.php');
 				include('vues/v_sommaire.php');
