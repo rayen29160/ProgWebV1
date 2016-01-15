@@ -138,5 +138,65 @@ class PdoGsb {
 		where login = '".$login."';";			
 		PdoGsb::$monPdo->exec ( $req );		
 	}
+	
+	
+	public function addfriends($idUtil, $add) {
+		$req = "insert into contact VALUES(':idUtil1',':add','"+date("YYY-mm-dd")+","+date("h:i:s")+")";
+		$rs = PdoGsb::$monPdo->prepare ( $req );
+		$rs->bindParam ( ":idUtil1", $idUtil );
+		$rs->bindParam ( ":add", $add );
+		PdoGsb::$monPdo->exec ( $req );
+	}
+	
+	public function addmessage($idUtil, $util2,$txt) {
+		$req = "insert into message VALUES(':idUtil1',':util2','"+date("YYY-mm-dd")+","+date("h:i:s")+",:message)";
+		$rs = PdoGsb::$monPdo->prepare ( $req );
+		$rs->bindParam ( ":idUtil1", $idUtil );
+		$rs->bindParam ( ":util2", $util2 );
+		$rs->binParam(":message",$txt);
+		PdoGsb::$monPdo->exec ( $req );
+	}
+	
+	public function messagevue($idUtil){
+					$req = "select count(*)
+				from message
+				where de = :de
+				and vue=0;";
+			$rs = PdoGsb::$monPdo->prepare ( $req );
+			$rs->bindParam ( ":de", $idUtil );
+			$rs->execute ();
+			$nb = $rs->fetch ( PDO::FETCH_ASSOC );
+			return $nb;
+		
+	
+	}
+	
+	public function messagenotif($idUtil){
+		$req = "select count(*)
+				from message
+				where de = :de
+				and notifié=0;";
+		$rs = PdoGsb::$monPdo->prepare ( $req );
+		$rs->bindParam ( ":de", $idUtil );
+		$rs->execute ();
+		$nb = $rs->fetch ( PDO::FETCH_ASSOC );
+		return $nb;
+	
+	
+	}
+	public function amisliste($util){
+	$req = "select Cutil2
+				from  contact
+				where Cutil1=:util
+				and Cvalidé=1";
+	$rs = PdoGsb::$monPdo->prepare ( $req );
+	$rs->bindParam ( ":util", $util );
+
+	$rs->execute ();
+	$ligne = $rs->fetch ( PDO::FETCH_ASSOC );
+	return $ligne;
+	
+	}
+	
 }
 ?>

@@ -59,6 +59,9 @@
 		case 'formulaire':{			
 			include("controleurs/c_formulaire.php");break;
 		}
+		case 'amis':{
+			include("controleurs/c_amis.php");break;
+		}
 		case 'deconnecter':{
 			if(isset($_SESSION)){
 				include("controleurs/c_deconnecter.php");

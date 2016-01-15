@@ -463,8 +463,7 @@ body b {
 	color: #CB7778;
 	margin-bottom:1%;
 	font-size: 0.9vw;
-	
-	
+		
 	
 
 }
@@ -512,7 +511,20 @@ body b {
 	margin-bottom:2%;
 
 }
+.subMenu{
+	margin-top:0% !important;
+}
+.subMenu li{
+	float:left !important;
+	
+}
 
+table .xdebug-error.xe-deprecated {
+	display:none !important;
+}
+#results table {
+	display:none !important;
+}
 
 
 
