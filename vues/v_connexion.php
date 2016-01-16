@@ -17,7 +17,7 @@
 	<body>
 		<form method="POST" action="index.php?uc=connexion&action=valideConnexion">
 			<span id="context"><h2>CONNEXION</h2></span>
-			<input type="text" name="id" placeholder="Identifiant" /><br>
+			<input type="text" name="login" placeholder="Identifiant" /><br>
 		     <input type="password" name="mdp" placeholder="Mot de passe"/><br>
 			<span id='go'><input src="styles/GO.png" name="submit" type="image"></span>		
 		</form>

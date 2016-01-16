@@ -6,6 +6,9 @@
 	$pourcentageMoyen = pourcentageObjectif($argentEconomise, $_SESSION["prixObjMoyen"]);
 	$pourcentageLong = pourcentageObjectif($argentEconomise, $_SESSION["prixObjLong"]);
 	
+	//$pdo->updateNewUtil($idUtil,$age,$ageDebut,$nbCig,$marque,$argentDepense,
+			//$argentEconomise,$dateArret,$choixObjectifs);
+	
 	if($_SESSION["choixObjectifs"]==1) {
 		include("vues/v_sommaire.php");
 		include("vues/v_motivation.php");

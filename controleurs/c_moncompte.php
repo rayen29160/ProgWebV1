@@ -12,7 +12,7 @@
 	}
 	
 	if(isset($_POST["long"])&& isset($_POST["prixlong"])){
-		$pdo->majObjectifLong($_SESSION["idObjL"], $_POST["long"], $_POST["prixlong"]);		
+		$pdo->majObjectifLong($_SESSION["idObjL"], $_POST["long"], $_POST["prixlong"]);
 	}
 	include("vues/v_sommaire.php");
 	include("vues/v_moncompte.php");

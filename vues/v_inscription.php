@@ -16,10 +16,10 @@
 	<div id="inscri">
 		<h1 id="chiant">Dans un premier temps ,<br> inscrivez-vous !</h1>
 		<form method="POST" action="index.php?uc=formulaire" onsubmit="return (verifMdp('mdp1','mdp2','erreur') && VerifMail('mail', 'erreur'));">
-			<span>Saisissez un identifiant : </span><input type="text" id="id"><br><br>
-			<span>Saisissez un mot de passe : </span><input type="password" id="mdp1"><br><br>
+			<span>Saisissez un identifiant : </span><input type="text" name="login" id="id"><br><br>
+			<span>Saisissez un mot de passe : </span><input type="password" name="mdp" id="mdp1"><br><br>
 			<span>Confirmez le mot de passe : </span><input type="password" id="mdp2"><br><br>
-			<span>Saisissez votre adresse mail : </span><input type="text" id="mail"><div id="erreur"></div><br>
+			<span>Saisissez votre adresse mail : </span><input type="text" name="mail" id="mail"><div id="erreur"></div><br>
 			<input type="submit" value="Je m'inscris">		
 		</form>
 		</div>

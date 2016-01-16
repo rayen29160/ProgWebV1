@@ -139,7 +139,61 @@ class PdoGsb {
 		PdoGsb::$monPdo->exec ( $req );		
 	}
 	
+	/**
+	 * Permet de savoir si l'adresse mail n'est pas déjà utilisée par un autre compte
+	 * @param String $email
+	 */
+	public function verifEmail($email) {
+		$req = "select *
+				from util_view
+				where mail = :email;";
+		$rs = PdoGsb::$monPdo->prepare ( $req );
+		$rs->bindParam ( ":email", $email );
+		$rs->execute ();
+		$ligne = $rs->fetch ( PDO::FETCH_ASSOC );
+		return $ligne;
+	}
 	
+	
+	/**
+	 * Permet de savoir si le login n'est pas déjà utilisé par un autre compte
+	 * 
+	 * @param String $login
+	 */
+	public function verifLogin($login) {
+		$req = "select *
+				from util_view
+				where login = :login;";
+		$rs = PdoGsb::$monPdo->prepare ( $req );
+		$rs->bindParam ( ":login", $login );
+		$rs->execute ();
+		$ligne = $rs->fetch ( PDO::FETCH_ASSOC );
+		return $ligne;
+	}
+	
+	
+	
+	public function addNewUtil($login, $mdp, $email) {
+		$req = "insert into utilisateur(login, mdp, mail) VALUES('".$login."','".$mdp."','".$email."');";		
+		PdoGsb::$monPdo->exec ( $req );
+	}
+	
+	public function updateNewUtil($idUtil,$age,$ageDebut,$nbCig,$marque,$argentDepense,
+			$argentEconomise,$dateArret,$choixObjectifs) {
+		$req = "UPDATE utilisateur 
+				SET age=".$age.", ageDebut=".$ageDebut.",
+				nbCigarettes=".$nbCig.", marque='".$marque."', argentDepense=".$argentDepense.", 
+				argentEconomise=".$argentEconomise.", dateArret='".$dateArret."', choixObjectifs=".choixObjectifs."
+				WHERE idUtil=".$idUtil.";";
+		PdoGsb::$monPdo->exec($req);
+	}
+		
+	
+	
+	
+	
+	
+	//FLORENT
 	public function addfriends($idUtil, $add) {
 		$req = "insert into contact VALUES(':idUtil1',':add','"+date("YYY-mm-dd")+","+date("h:i:s")+")";
 		$rs = PdoGsb::$monPdo->prepare ( $req );

@@ -13,7 +13,7 @@
 		
 		<div id = texte>
 			<?php 
-				echo("<strong><h1>Bienvenue ".$_SESSION["id"]."</h1></strong>");
+				echo("<strong><h1>Bienvenue ".$_SESSION["login"]."</h1></strong>");
 				echo("<SPAN>Depuis que vous fumez vous avez dépensé environ <br></SPAN> <h1>".number_format($_SESSION["argentDepense"], 0, ',', ' ')."€</h1><br>");		
 				echo "<BR>";
 				if($_SESSION["reveDepasse"]>=1) {

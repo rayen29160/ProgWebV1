@@ -15,16 +15,16 @@ switch ($action) {
 	
 	case 'valideConnexion' :
 		{			
-			$id = $_REQUEST ['id'];
+			$login = $_REQUEST ['login'];
 			$mdp = $_REQUEST ['mdp'];
-			$tabInfo =	$pdo->getInfosUtilisateur($id, $mdp);
+			$tabInfo =	$pdo->getInfosUtilisateur($login, $mdp);
 			
 			
 			//Teste si l'identifiant et le mot de passe sont bons
 			if(sizeof($tabInfo)>1)
 			{
 				//Si oui, affiche la page d'accueil et le sommaire				
-				$_SESSION["id"] = $id;
+				$_SESSION["login"] = $login;
 				$_SESSION["connecte"]=1;
 				$_SESSION["age"]= $tabInfo["age"];
 				$_SESSION["ageDebut"]= $tabInfo["ageDebut"];
@@ -46,8 +46,8 @@ switch ($action) {
 				$_SESSION["mail"] = $tabInfo["mail"];
 				$_SESSION["reveDepasse"] = nbRevesDepasse($_SESSION["argentDepense"] , $_SESSION["prixObjLong"]);
 				
-				$pdo->majArgentEconomise($_SESSION ["id"], floatval($_SESSION["argentEconomise"]));
-				$pdo->majArgentDepense( $_SESSION ["id"], $_SESSION["argentDepense"]);				
+				$pdo->majArgentEconomise($_SESSION["login"], floatval($_SESSION["argentEconomise"]));
+				$pdo->majArgentDepense( $_SESSION["login"], $_SESSION["argentDepense"]);				
 				
 				include('vues/v_accueil.php');
 				include('vues/v_sommaire.php');
