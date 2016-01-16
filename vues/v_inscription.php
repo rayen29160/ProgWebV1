@@ -3,7 +3,46 @@
 	<head><script src="scripts/verifChamps.js"></script>
 	<link rel="stylesheet" type="text/css" href="styles/Style.css" />
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-<script src="jquery/jquery.js"></script></head>
+<script src="jquery/jquery.js"></script>
+<script type="text/javascript" src="jquery-1.2.3.js"> </script> 
+
+<script> 
+$(document).ready(function(){ 
+	$("input").focus(function(){ 
+		var info_form=$(this).next(".info"); 
+		info_form.empty(); 
+		}); 
+	
+	$("input").blur(function(){ 
+	var name=($(this).attr("name")); 
+	var value=($(this).attr("value")); 
+	var info_form=$(this).next(".info"); 
+	if(value==undefined) 
+	{ 
+	info_form.append("Obligatoire"); 
+	} 
+	else if(name=="login") 
+	{ 
+		$.ajax({ 
+			type: "GET", 
+			url: "./verif_login.php?login="+value, 
+			success:function(data){ 
+			if(data==1) 
+			{ 
+			info_form.append("Un compte avec le même pseudo existe déja"); 
+			} 
+			else 
+			{ 
+			info_form.append("Valide"); 
+			} 
+			} 
+			}); 
+	}  
+	});	
+}); 
+	</script> 
+
+</head>
 	<body>
 	<img src="styles/FOND2.png" id="bg" alt="">
 	<div id="header">
@@ -16,7 +55,7 @@
 	<div id="inscri">
 		<h1 id="chiant">Dans un premier temps ,<br> inscrivez-vous !</h1>
 		<form method="POST" action="index.php?uc=formulaire" onsubmit="return (verifMdp('mdp1','mdp2','erreur') && VerifMail('mail', 'erreur'));">
-			<span>Saisissez un identifiant : </span><input type="text" name="login" id="id"><br><br>
+			<span>Saisissez un identifiant : </span><input type="text" name="login" id="id"><span class="info"></span><br><br>
 			<span>Saisissez un mot de passe : </span><input type="password" name="mdp" id="mdp1"><br><br>
 			<span>Confirmez le mot de passe : </span><input type="password" id="mdp2"><br><br>
 			<span>Saisissez votre adresse mail : </span><input type="text" name="mail" id="mail"><div id="erreur"></div><br>
