@@ -209,8 +209,6 @@ class PdoGsb {
 		$rs->bindParam ( ":util2", $util2 );
 		$rs->bindParam(":titre",$titre);
 		$rs->bindParam (":message",$txt);
-		
-		$rs->debugDumpParams();
 		PdoGsb::$monPdo->exec ( $req );
 	}
 	

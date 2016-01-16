@@ -44,7 +44,7 @@ $(document).ready( function() {
 <!--fin du formulaire-->
  
 <!--preparation de l'affichage des resultats-->
-<div id="results">dddddddds</div></div>
+<div id="results"></div></div>
 	</body>
 </html>	
 	

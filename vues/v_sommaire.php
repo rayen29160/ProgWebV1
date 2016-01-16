@@ -55,8 +55,8 @@ $(document).ready( function () {
 			
 			<li class="toggleSubMenu"><span>mon espace</span>
 			<ul class="subMenu">
-				<li><a href="#">messages</a></li>
-				<li><a href="index.php?uc=amis">contacts</a></li>
+				
+				<li><a href="index.php?uc=amis">messages</a></li>
 				<li><a href="index.php?uc=moncompte">mon compte</a></li>
 			
 			</ul> 

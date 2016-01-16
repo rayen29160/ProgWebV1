@@ -9,9 +9,9 @@ $link   =   @mysql_connect( DB_HOST , DB_USER , DB_PASSWORD );
 mysql_select_db( DB_NAME , $link );
  
 //recherche des résultats dans la base de données
-$result =   mysql_query( 'SELECT idUtil ,nom , prenom 
+$result =   mysql_query( 'SELECT idUtil ,login 
                           FROM utilisateur
-                          where nom LIKE \'' . safe( $_GET['q'] ) . '%\'
+                          where login LIKE \'' . safe( $_GET['q'] ) . '%\'
                           LIMIT 0,20' );
  
 // affichage d'un message "pas de résultats"
@@ -28,8 +28,8 @@ else
     {
     ?>
         <div class="article-result">
-        <form  method="POST" action="index.php?uc=message">
-            <h3><a ><?php echo utf8_encode( $post->nom );echo "" ; echo utf8_encode( $post->prenom ); ?></a></h3>
+        <form  method="POST" action="index.php?uc=amis">
+            <h3><a ><?php echo utf8_encode( $post->login );echo "" ; echo utf8_encode( $post->login ); ?></a></h3>
             
             <input style="margin-left:5%; width: 25%; float:left;" name="titre" type="message" id="titre" placeholder="Titre"></textarea><br><br>
             <input style="margin-left:5%; width: 25%; height:50px; float:left;" name="texte" type="message" id="message" placeholder="Message"></textarea>
