@@ -62,6 +62,9 @@
 		case 'amis':{
 			include("controleurs/c_amis.php");break;
 		}
+		case 'message':{
+			include("controleurs/c_messages.php");break;
+		}
 		case 'deconnecter':{
 			if(isset($_SESSION)){
 				include("controleurs/c_deconnecter.php");

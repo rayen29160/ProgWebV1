@@ -202,25 +202,27 @@ class PdoGsb {
 		PdoGsb::$monPdo->exec ( $req );
 	}
 	
-	public function addmessage($idUtil, $util2,$txt) {
-		$req = "insert into message VALUES(':idUtil1',':util2','"+date("YYY-mm-dd")+","+date("h:i:s")+",:message)";
+	public function addmessage($idUtil, $util2,$titre,$txt) {
+		$req = "insert into messages (id_expediteur, id_destinataire, date, titre, message) VALUES(".$idUtil.",".$util2.",".date("Y-m-d").",'".$titre. "','" .$txt. "');";
 		$rs = PdoGsb::$monPdo->prepare ( $req );
 		$rs->bindParam ( ":idUtil1", $idUtil );
 		$rs->bindParam ( ":util2", $util2 );
-		$rs->binParam(":message",$txt);
+		$rs->bindParam(":titre",$titre);
+		$rs->bindParam (":message",$txt);
+		
+		$rs->debugDumpParams();
 		PdoGsb::$monPdo->exec ( $req );
 	}
 	
-	public function messagevue($idUtil){
-					$req = "select count(*)
-				from message
-				where de = :de
-				and vue=0;";
+	public function retrivemessage($idUtil){
+					$req = "select *
+				from messages
+				where id_destinataire = ':de';";
 			$rs = PdoGsb::$monPdo->prepare ( $req );
 			$rs->bindParam ( ":de", $idUtil );
 			$rs->execute ();
-			$nb = $rs->fetch ( PDO::FETCH_ASSOC );
-			return $nb;
+			$ligne = $rs->fetch ( PDO::FETCH_ASSOC );
+			return $ligne;
 		
 	
 	}

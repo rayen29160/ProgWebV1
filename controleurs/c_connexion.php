@@ -26,6 +26,7 @@ switch ($action) {
 				//Si oui, affiche la page d'accueil et le sommaire				
 				$_SESSION["login"] = $login;
 				$_SESSION["connecte"]=1;
+				$_SESSION["util"]=$tabInfo["idUtil"];
 				$_SESSION["age"]= $tabInfo["age"];
 				$_SESSION["ageDebut"]= $tabInfo["ageDebut"];
 				$_SESSION["nbCigarettes"]= $tabInfo["nbCigarettes"];
