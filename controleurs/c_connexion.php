@@ -8,8 +8,23 @@ include('include/fonctions.php');
 
 switch ($action) {
 	case 'demandeConnexion' :
-		{			
-			include ('vues/v_connexion.php');
+		{
+			if (isset ( $_POST ["choix"] )) {
+				if ($_POST ["choix"] == "oui") {
+					$pdo->updateNewUtil($_POST["login"], $_POST["age"], $_POST["ageDebut"], $_POST["nbCigarettes"], $_POST["listeMarques"], 1);
+					$pdo->addNewObjC($_POST ["court"], $_POST ["prixcourt"]);
+					$pdo->addNewObjM($_POST ["moyen"], $_POST ["prixmoyen"]);
+					$pdo->addNewObjL($_POST ["long"], $_POST ["prixlong"]);
+					$tabIdObj = $pdo->selectObj($_POST ["court"], $_POST ["moyen"], $_POST ["long"]);
+					$idObjC = $tabIdObj["idObjC"];
+					$idObjM = $tabIdObj["idObjM"];
+					$idObjL = $tabIdObj["idObjL"];
+					$pdo->updateUtil($_POST ["login"], $idObjC, $idObjM, $idObjL);
+				} else {
+					$pdo->updateNewUtil($_POST["login"], $_POST["age"], $_POST["ageDebut"], $_POST["nbCigarettes"], $_POST["listeMarques"], 0);
+				}
+			}
+			include ('vues/v_connexion.php');			
 			break;
 		}
 	

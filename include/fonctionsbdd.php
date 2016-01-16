@@ -178,15 +178,71 @@ class PdoGsb {
 		PdoGsb::$monPdo->exec ( $req );
 	}
 	
-	public function updateNewUtil($idUtil,$age,$ageDebut,$nbCig,$marque,$argentDepense,
-			$argentEconomise,$dateArret,$choixObjectifs) {
+	public function updateNewUtil($login,$age,$ageDebut,$nbCig,$marque,$choixObjectifs) {
 		$req = "UPDATE utilisateur 
 				SET age=".$age.", ageDebut=".$ageDebut.",
-				nbCigarettes=".$nbCig.", marque='".$marque."', argentDepense=".$argentDepense.", 
-				argentEconomise=".$argentEconomise.", dateArret='".$dateArret."', choixObjectifs=".choixObjectifs."
-				WHERE idUtil=".$idUtil.";";
+				nbCigarettes=".$nbCig.", marque='".$marque."', choixObjectifs=".$choixObjectifs."
+				WHERE login='".$login."';";
 		PdoGsb::$monPdo->exec($req);
 	}
+	/**
+	 * Crée un nouvel objectif court
+	 *
+	 * @param String $nomObjC
+	 * @param int $prixObjC
+	 */
+	public function addNewObjC($nomObjC, $prixObjC) {
+		$req = "insert into objcourt(nomObjC, prixObjC) VALUES('".$nomObjC."',".$prixObjC.");";
+		PdoGsb::$monPdo->exec ( $req );
+	}
+	
+	/**
+	 * Crée un nouvel objectif moyen
+	 *
+	 * @param String $nomObjM
+	 * @param int $prixObjM
+	 */
+	public function addNewObjM($nomObjM, $prixObjM) {
+		$req = "insert into objmoyen(nomObjM, prixObjM) VALUES('".$nomObjM."',".$prixObjM.");";
+		PdoGsb::$monPdo->exec ( $req );
+	}
+	
+	/**
+	 * Crée un nouvel objectif long
+	 *
+	 * @param String $nomObjL
+	 * @param int $prixObjL
+	 */
+	public function addNewObjL($nomObjL, $prixObjL) {
+		$req = "insert into objlong(nomObjL, prixObjL) VALUES('".$nomObjL."',".$prixObjL.");";
+		PdoGsb::$monPdo->exec ( $req );
+	}
+	
+	
+	public function selectObj($nomObjC, $nomObjM, $nomObjL) {
+		$req = "select *
+				from objcourt, objmoyen, objlong
+				where nomObjC = :nomObjC
+				and nomObjM = :nomObjM
+				and nomObjL = :nomObjL ;";
+		$rs = PdoGsb::$monPdo->prepare ( $req );
+		$rs->bindParam (":nomObjC", $nomObjC );
+		$rs->bindParam (":nomObjM", $nomObjM );
+		$rs->bindParam (":nomObjL", $nomObjL );
+		$rs->execute();
+		$ligne = $rs->fetch ( PDO::FETCH_ASSOC );
+		return $ligne;
+	}
+	
+	
+	public function updateUtil($login, $idObjC, $idObjM, $idObjL){
+		$req = "UPDATE utilisateur
+				SET idObjC=".$idObjC.",idObjM=".$idObjM.", idObjL=".$idObjL."
+				WHERE login='".$login."';";
+		PdoGsb::$monPdo->exec($req);
+	}
+	
+	
 		
 	
 	

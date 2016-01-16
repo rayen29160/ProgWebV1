@@ -27,7 +27,7 @@
 
 	<div id="inscri">
 	<h1>Dites m'en un peu plus sur vous ...</h1>
-		<form method="POST" action="index.php?uc=motivation" name="formInformations" onsubmit="return (verificationRemplissage('age', 'ageDebut', 'nbCigarettes', 'marques', 'erreur') && verifNbCigarette('nbCigarettes', 'erreur') && verifMontantsObj('prixCourt', 'prixMoyen', 'prixLong', 'erreur') && verifAges('age', 'ageDebut', 'erreur'));">
+		<form method="POST" action="index.php?uc=connexion&action=demandeConnexion" name="formInformations" onsubmit="return (verificationRemplissage('age', 'ageDebut', 'nbCigarettes', 'marques', 'erreur') && verifNbCigarette('nbCigarettes', 'erreur') && verifMontantsObj('prixCourt', 'prixMoyen', 'prixLong', 'erreur') && verifAges('age', 'ageDebut', 'erreur'));">
 		<span>Quel âge avez-vous ?* </span><input type="text" id="age" name="age"/><br><br>
 		
 		<span>Age auquel vous avez commencé ?* </span> <input type="text" id="ageDebut" name="ageDebut"/><br><br>
@@ -60,7 +60,7 @@
 			<span> Objectif à long terme<br> (exemple : une moto)</span><input type="text" id="objLong" name="long"/><span> Prix (€) </span><input type="text" id="prixLong" name="prixlong"/>
 			<br><br>
 		</div>
-		
+		<input type="hidden" name="login" value="<?php echo($_POST["login"]); ?>">
 		<font color="red">Les champs * sont des champs obligatoires</font>
 		
 		<br>
