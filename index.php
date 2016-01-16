@@ -56,6 +56,9 @@
 		case 'inscription':{			
 			include("controleurs/c_inscription.php");break;
 		}
+		case 'mesmessages':{
+			include("controleurs/c_mesmessages.php");break;
+		}
 		case 'formulaire':{			
 			include("controleurs/c_formulaire.php");break;
 		}

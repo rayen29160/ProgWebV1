@@ -37,6 +37,7 @@ $(document).ready( function() {
 <!--debut du formulaire-->
 <form class="ajax" action="search.php" method="get">
 	<p>
+	<a href="index.php?uc=mesmessages">mes messages</a><br>
 		<label for="q">Rechercher un utilisateur</label>
 		<input type="text" name="q" id="q" />
 	</p>

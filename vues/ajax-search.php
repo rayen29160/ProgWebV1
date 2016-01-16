@@ -15,9 +15,15 @@ $result =   mysql_query( 'SELECT idUtil ,login
                           LIMIT 0,20' );
  
 // affichage d'un message "pas de résultats"
+
+?>
+
+<?php 
+
 if( mysql_num_rows( $result ) == 0 )
 {
 ?>
+	
     <h3 style="text-align:center; margin:10px 0;">Pas de r&eacute;sultats pour cette recherche</h3>
 <?php
 }
